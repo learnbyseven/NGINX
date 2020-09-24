@@ -1,0 +1,24 @@
+
+APIG-APIM
+
+
+
+ 
+
+1.      Setup a quota limit for a particular customer -flexibility with setup being monthly or weekly or daily value.  
+
+2.      Once a request comes in from this customer, we intercept a predefined element in the header.
+
+3.      We check against the limit, if it is below the limit the we serve this request further.  
+
+1.      We update the counter for this customer. 
+
+4.      Otherwise what are the options that tool provides to throttle ?  ( Add delay of 2 seconds (configurable ?) OR Reject OR relegate to fewer servers/threads/assigned lower priority)
+
+1.      We update the counter for this customer.  
+
+2.       And send notification via email service. 
+
+ 
+
+Let us know how we proceed here ?
