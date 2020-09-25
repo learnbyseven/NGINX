@@ -22,3 +22,32 @@ APIG-APIM
  
 
 Let us know how we proceed here ?
+
+
+
+<attrList attrCode="PATNAME">
+<attr>
+<fieldMap>
+<field name="onmFirst">
+<value xsi:type="xs:string"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xs="http://www.w3.org/2001/XMLSchema">Mario</value>
+</field>
+
+<field name="onmLast">
+<value xsi:type="xs:string"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xs="http://www.w3.org/2001/XMLSchema">Bros</value>
+</field>
+</fieldMap>
+</attr>
+</attrList>
+
+
+
+<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Don't forget me this weekend!</body>
+</note>
