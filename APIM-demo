@@ -1,0 +1,72 @@
+
+
+app_webapp
+web application arcadia
+- production-Submit 
+
+
+cp_mainapp
+main app
+wl_mainapp
+http://www.arcadia-finance.io/
+http://mainapp.nginx-udf.internal:30511
+
+Gatewayweb ---
+
+cp_back
+DB backend
+http://www.arcadia-finance.io/files/
+wl_backend
+http://backend.nginx-udf.internal:31584
+
+Gatewayweb ---
+
+
+
+API - APP
+
+app_api
+API Application Arcadia
+Production Env
+
+
+API DEF
+
+arcadia-api-def
+Arcadia API Definition
+v1
+arcadia-swagger3.yaml
+
+
+PUBLISH
+
+prod-api
+Production API
+
+ENC PE
+API Application Arcadia 
+GAPI
+
+
+cp_mainapp_api
+Component to Mainapp
+wl_mainapp_apihttp://main
+http://mainapp.nginx-udf.internal:30511
+
+
+
+JWT
+---
+
+jwt-bearer-sso-apm
+JWT Bearer SSO
+
+{
+"keys": [
+      {
+      "k": "aWxvdmVuZ2lueA",
+      "kid": "9876543210",
+      "kty": "oct"
+      }
+   ]
+}
