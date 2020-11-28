@@ -1,1 +1,18 @@
 
+Deploy Arcadia 
+
+1. SSH (or WebSSH and cd /home/ubuntu/) to CICD Server
+
+2. Run this command kubectl apply -f /home/ubuntu/Arcadia_k8S/all_apps.yaml
+
+$cd /home/ubuntu/ & apply -f /home/ubuntu/Arcadia_k8S/all_apps.yaml
+
+3. RDP to the jumphost with user:user as credentials
+
+Open Chrome
+
+Open Kubernetes Dashboard bookmark (if not already opened)
+
+Click skip on the logon page
+
+You should see the services and the pods
