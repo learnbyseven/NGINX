@@ -11,23 +11,52 @@ Deploy and Publish Arcadia application
 1. SSH (or WebSSH and cd /home/ubuntu/) to CICD Server
 cd /home/ubuntu/ && kubectl apply -f /home/ubuntu/Arcadia_k8S/all_apps.yaml && kubectl apply -f /home/ubuntu/k8s_ingress/full_ingress_arcadia.yaml
 
-Simulate Attack 
----------------
+Simulate Attack on Arcadia K8s
+------------------------------
 
 1. ?a=<script>
 2. {\"$ne\":\"michael@gmail.com\"} 
 
 
+BUILD APP PROTECT 
+------------------------
+Docker server App protect
+-------------------------
+Docker server
+-------------------------
+
+Docker build (LAB)
+$cd /home/ubuntu
+$ docker build -t app-protect:tc -f Dockerfile-sig-tc . 
+$ docker run -dit --name app-protect -p 80:80 -v /home/ubuntu/nginx.conf:/etc/nginx/nginx.conf app-protect:tc
+
+
+RE-Simulate Attack on Arcadia NAP DOCKER
+----------------------------------------
+
+1. ?a=<script>
+2. {\"$ne\":\"michael@gmail.com\"} 
+
+CHECK ELK LOGS --> overview dashboard 
+
+POSTMAN 
+Threat camp. Attacks 
+1. Jakarta
+2. Drupal 
+
+CHECK ELK LOGS --> overview dashboard 
+
+
+CICD NAP DEPLOYMENT CENTOS7VM
+-----------------------------
+
+//INCASE DEPLOYED / sudo yum remove -y app-protect* && sudo yum remove -y nginx-plus* && sudo rm -rf /etc/nginx && sudo rm -rf /var/log/nginx
+//Jumphost>GLAB-ansible-deploy (run-pipeline) or gitlab depoy
+Create BOT Policy
 
 
 
 
-3. RDP to the jumphost with user:user as credentials
 
-Open Chrome
 
-Open Kubernetes Dashboard bookmark (if not already opened)
 
-Click skip on the logon page
-
-You should see the services and the pods
