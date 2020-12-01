@@ -1,16 +1,20 @@
 APIM DEMO Controller - 3.10 & NAP 2.0 
  
-UDF LABs (Demo Buildout - NGINX Controller 3.10 with BIG-IP - ADC and API security)
+UDF LABs 
+- NGINX Controller 3.10 with BIG-IP - ADC and API security)
+- NGINX App Protect v2.1 in front of k8s (Modern App)
+
+
+PRE-CALL : LAB Test / JBOX access  / Devops tools login/ POSTMAN 
 
 DEMO-FLOW
 ---------
 ---------
 
-PRE : LAB UP / JBOX access tested / Devops tools login/ POSTMAN 
 
-- ARCH EXPLANATION (4 Microservices- Web/APIs) (estimated time 5 Min)
+- ARCH EXPLANATION (4 Microservices- Web/APIs) (Estimated time, 5 Min)
 
-- Controller quick walk through (core modules , RBAC, Integration etc. (5-10 Min)
+- Controller quick walk (core modules , RBAC, Integration etc. (5-10 Min)
 
 -  Controller ADC usecases  (15Min)
 
