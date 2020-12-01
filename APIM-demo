@@ -1,3 +1,50 @@
+APIM DEMO Controller - 3.10 
+UDF LAB (Demo Buildout - NGINX Controller 3.10 with BIG-IP - ADC and API security)
+
+FLOW 
+
+PRE : LAB UP / JBOX access tested / Devops tools login 
+
+- ARCH EXPLANATION (4 Microservices- Web/APIs) 
+- DEPLOY AND PUBLISH WEB APP
+      - Devops deploy; Provisoning INFRA and apps on Kubernetes (GLAB > JENKINS > Kuberntes)
+      - Controller Publish ; 
+      
+      
+    
+      
+- DEPLOY AND PUBLISH API 
+
+
+
+
+NAP 
+UDF LAB : NGINX App Protect v2.1 in front of k8s (Modern App)
+
+
+
+
+
+
+
+
+
+
+
+Login to all tools
+
+Controller : admin@nginx-udf.internal / admin123!
+Jenkins : admin / admin
+GitLab : root / F5twister$
+
+
+
+
+
+
+
+
+
 
 
 app_webapp
