@@ -53,40 +53,47 @@ GitLab : root / F5twister$
 
 
 
-
+Create APP
+----------
 
 app_webapp
 web application arcadia
-- production-Submit 
+production
+Submit 
 
-
+ADD Component main
+--------------
 cp_mainapp
 main app
 http://www.arcadia-finance.io/
 wl_mainapp
-
 http://mainapp.nginx-udf.internal:30511
+Gateway: Web
 
-Gatewayweb ---
+ADD Component back
+--------------
 
 cp_back
 DB backend
 http://www.arcadia-finance.io/files/
 wl_backend
 http://backend.nginx-udf.internal:31584
-
-Gatewayweb ---
+Gateway: Web
 
 
 
 API - APP
+---------
 
+CREATE APP 
+----------
 app_api
 API Application Arcadia
 Production Env
 
 
-API DEF
+API DEFINATION
+--------------
 
 arcadia-api-def
 Arcadia API Definition
@@ -94,14 +101,17 @@ OAS3-Arcadia.yaml (located desktop)
 
 
 PUBLISH
+-------
 
 prod-api
 Production API
-ENv PE
+ENV: Production
 APP* API Application Arcadia 
 Gateway Gateway API
 
 
+ADD Component
+-------------
 
 cp_mainapp_api
 Component to Mainapp
@@ -109,6 +119,10 @@ wl_mainapp_api
 http://mainapp.nginx-udf.internal:30511
 
 
+DEVPORTAL
+---------
+Dev Portal Arcadia
+Brand name : API for Arcadia Application
 
 JWT
 ---
@@ -125,8 +139,3 @@ JWT Bearer SSO
       }
    ]
 }
-
-
-devportal
-Dev Portal Arcadia
-Brand name : API for Arcadia Application,
