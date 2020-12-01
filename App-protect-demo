@@ -55,7 +55,47 @@ CICD NAP DEPLOYMENT CENTOS7VM
 Create BOT Policy
 
 
+// $ vi /etc/nginx/policy_bots.json
 
+{
+    "policy": {
+        "name": "bot_defense_policy",
+        "template": {
+            "name": "POLICY_TEMPLATE_NGINX_BASE"
+        },
+        "applicationLanguage": "utf-8",
+        "enforcementMode": "blocking",
+        "bot-defense": {
+            "settings": {
+                "isEnabled": true
+            },
+            "mitigations": {
+                "classes": [
+                    {
+                        "name": "trusted-bot",
+                        "action": "alarm"
+                    },
+                    {
+                        "name": "untrusted-bot",
+                        "action": "block"
+                    },
+                    {
+                        "name": "malicious-bot",
+                        "action": "block"
+                    }
+                ]
+            }
+        }
+    }
+}
+
+// $ app_protect_policy_file "/etc/nginx/policy_bots.json";
+
+
+// $ nginx -s reload 
+
+// Launch Jmeter desktop - jumphost - open recent or HTTP Request Bots.jmx (Located in folder Desktop > lab-links > jmeter_files)
+// ELK , open overview dashboard 
 
 
 
