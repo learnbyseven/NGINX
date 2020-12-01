@@ -1,11 +1,21 @@
 
-Deploy Arcadia 
+NAP
+---
+UDF LAB : NGINX App Protect v2.1 in front of k8s (Modern App)
+Lab guide is here : https://rtd-nginx-app-protect-udf.readthedocs.io/en/latest/
+
+
+Deploy and Publish , Arcadia 
 
 1. SSH (or WebSSH and cd /home/ubuntu/) to CICD Server
+cd /home/ubuntu/ && kubectl apply -f /home/ubuntu/Arcadia_k8S/all_apps.yaml && kubectl apply -f /home/ubuntu/k8s_ingress/full_ingress_arcadia.yaml
 
-2. Run this command kubectl apply -f /home/ubuntu/Arcadia_k8S/all_apps.yaml
+Attack 
+1. ?a=<script>
+2. 
 
-$cd /home/ubuntu/ & apply -f /home/ubuntu/Arcadia_k8S/all_apps.yaml
+
+
 
 3. RDP to the jumphost with user:user as credentials
 
