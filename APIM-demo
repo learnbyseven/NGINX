@@ -1,5 +1,5 @@
-APIM DEMO Controller - 3.10 
-Use cases use from 
+APIM DEMO Controller - 3.10 & NAP 2.0 
+ 
 UDF LABs (Demo Buildout - NGINX Controller 3.10 with BIG-IP - ADC and API security)
 
 DEMO-FLOW
@@ -16,7 +16,7 @@ PRE : LAB UP / JBOX access tested / Devops tools login/ POSTMAN
 
       1. Automate applications and Infra Provisoning 
       2. Microservice1&2 Automate infra deployment ; Manual publishing via controller
-      3. APP2 Automate infra deployment; Postman/API call for publishing on controller
+      3. APP2 Automate infra deployment; Publishing via APIs/Postman 
       4. APP3 Complete end to end automated deployment (Infra+publishing) 
       
  - DEPLOY, DEFINE, PUBLISH and TEST APIs (Controller APIM 3.10) (20-25Min)
@@ -30,10 +30,10 @@ PRE : LAB UP / JBOX access tested / Devops tools login/ POSTMAN
       
  
 
-NAP DEMO USECASES COVERS
-------------------------
+NAP DEMO USECASES COVERS (25-30Min)
+-----------------------------------
 
-1 Deploying test lab environment (4 Microservices /Arcadia on K8s) (25-30Min)
+1 Deploying test lab environment (4 Microservices /Arcadia on K8s) 
 2 Simulate XSS and SQL injection Attack 
 3 Build and placement of APP protect (Threat camp) 
 4 Re-simulate XSS and SQL injection Attack
@@ -48,6 +48,18 @@ NAP DEMO USECASES COVERS
 
 
 Total Estimated Time ( 75 Min)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
