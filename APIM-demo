@@ -3,12 +3,13 @@ UDF LAB (Demo Buildout - NGINX Controller 3.10 with BIG-IP - ADC and API securit
 
 FLOW 
 
-PRE : LAB UP / JBOX access tested / Devops tools login 
+PRE : LAB UP / JBOX access tested / Devops tools login/ POSTMAN 
 
 - ARCH EXPLANATION (4 Microservices- Web/APIs) 
+- Controller quick walk through (4 modules , RBAC, Integration etc) 
 - DEPLOY AND PUBLISH WEB APP (ADC) 
-      - Devops deploy; Provisoning INFRA and apps on Kubernetes (GLAB > JENKINS > Kuberntes)
-      - Controller Publish ; 
+      - Devops deploy; Provisoning INFRA and apps on Kubernetes (GLAB > JENKINS > Kubernetes & docker)
+      - Controller Publishing apps ; 
       Usecases 
       1. APP1 Automate infra deployment ; manual publishing on controller
       2. APP2 Automate infra deployment; Postman/API call for publishing on controller
@@ -17,7 +18,10 @@ PRE : LAB UP / JBOX access tested / Devops tools login
       
     
       
-- DEPLOY AND PUBLISH API 
+- DEPLOY, DEFINE, PUBLISH and TEST APIs (App -> APIDEF(OAPI) -> APIPUB ->DEVPORTAL ->SECURITY(JWT) ->Overview(analytics) 
+
+
+
 
 
 
@@ -86,23 +90,22 @@ API DEF
 
 arcadia-api-def
 Arcadia API Definition
-v1
-arcadia-swagger3.yaml
+OAS3-Arcadia.yaml (located desktop) 
 
 
 PUBLISH
 
 prod-api
 Production API
+ENv PE
+APP* API Application Arcadia 
+Gateway Gateway API
 
-ENC PE
-API Application Arcadia 
-GAPI
 
 
 cp_mainapp_api
 Component to Mainapp
-wl_mainapp_apihttp://main
+wl_mainapp_api
 http://mainapp.nginx-udf.internal:30511
 
 
@@ -122,3 +125,8 @@ JWT Bearer SSO
       }
    ]
 }
+
+
+devportal
+Dev Portal Arcadia
+Brand name : API for Arcadia Application,
