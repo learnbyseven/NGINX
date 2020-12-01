@@ -6,9 +6,13 @@ FLOW
 PRE : LAB UP / JBOX access tested / Devops tools login 
 
 - ARCH EXPLANATION (4 Microservices- Web/APIs) 
-- DEPLOY AND PUBLISH WEB APP
+- DEPLOY AND PUBLISH WEB APP (ADC) 
       - Devops deploy; Provisoning INFRA and apps on Kubernetes (GLAB > JENKINS > Kuberntes)
       - Controller Publish ; 
+      Usecases 
+      1. APP1 Automate infra deployment ; manual publishing on controller
+      2. APP2 Automate infra deployment; Postman/API call for publishing on controller
+      3. APP3 Complete end to end automated deployment (Infra+publishing) 
       
       
     
@@ -54,8 +58,9 @@ web application arcadia
 
 cp_mainapp
 main app
-wl_mainapp
 http://www.arcadia-finance.io/
+wl_mainapp
+
 http://mainapp.nginx-udf.internal:30511
 
 Gatewayweb ---
