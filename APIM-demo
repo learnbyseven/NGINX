@@ -1,5 +1,6 @@
 APIM DEMO Controller - 3.10 
-UDF LAB (Demo Buildout - NGINX Controller 3.10 with BIG-IP - ADC and API security)
+Use cases use from 
+UDF LABs (Demo Buildout - NGINX Controller 3.10 with BIG-IP - ADC and API security)
 
 DEMO-FLOW
 ---------
@@ -7,34 +8,46 @@ DEMO-FLOW
 
 PRE : LAB UP / JBOX access tested / Devops tools login/ POSTMAN 
 
-- ARCH EXPLANATION (4 Microservices- Web/APIs)
+- ARCH EXPLANATION (4 Microservices- Web/APIs) (estimated time 5 Min)
 
-- Controller quick walk through (4 modules , RBAC, Integration etc)
+- Controller quick walk through (core modules , RBAC, Integration etc. (5-10 Min)
 
-- DEPLOY AND PUBLISH WEB APP (ADC) 
+-  Controller ADC usecases  (15Min)
 
-      - Devops deploy; Provisoning INFRA and apps on Kubernetes (GLAB > JENKINS > Kubernetes & docker)
-      - Controller Publishing apps ; 
+      1. Automate applications and Infra Provisoning 
+      2. Microservice1&2 Automate infra deployment ; Manual publishing via controller
+      3. APP2 Automate infra deployment; Postman/API call for publishing on controller
+      4. APP3 Complete end to end automated deployment (Infra+publishing) 
       
-      Usecases Covered (Controller ADC 3.10)
-      1. APP1 Automate infra deployment ; manual publishing on controller
-      2. APP2 Automate infra deployment; Postman/API call for publishing on controller
-      3. APP3 Complete end to end automated deployment (Infra+publishing) 
+ - DEPLOY, DEFINE, PUBLISH and TEST APIs (Controller APIM 3.10) (20-25Min)
       
-      - DEPLOY, DEFINE, PUBLISH and TEST APIs (Controller APIM 3.10)
-      
-      4. API creation
-      5. API DEF (OAPI) 
-      6. API PUB
-      7. DEVPORTAL
-      8. API security(JWT)
-      9. DashBoard - Overview (analytics)
+      5. API creation
+      6. Defining APIs (OAPI & Swagger) 
+      7. Publishing APIs
+      8. Developer Portal 
+      9. API security(JWT)
+      10. DashBoard - Overview (analytics)
       
  
 
+NAP DEMO USECASES COVERS
+------------------------
+
+1 Deploying test lab environment (4 Microservices /Arcadia on K8s) (25-30Min)
+2 Simulate XSS and SQL injection Attack 
+3 Build and placement of APP protect (Threat camp) 
+4 Re-simulate XSS and SQL injection Attack
+5 Security logs analysis on ELK stack
+6 Trigger Threat campaign attack (Drupal/Jakarta)
+7 Threat campaign logs analysis on ELK stack
+8 SVM/CICD workflow deployment of NAP 
+9. Implementation of BOT protection policies 
+10.Trigger BOT attack 
+11.BOT attack logs analysis on ELK stack
 
 
 
+Total Estimated Time ( 75 Min)
 
 
 
@@ -44,7 +57,7 @@ Login to all tools
 Controller : admin@nginx-udf.internal / admin123!
 Jenkins : admin / admin
 GitLab : root / F5twister$
-
+(GLAB > JENKINS > Kubernetes & docker)
 
 
 
