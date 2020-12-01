@@ -5,14 +5,19 @@ UDF LAB : NGINX App Protect v2.1 in front of k8s (Modern App)
 Lab guide is here : https://rtd-nginx-app-protect-udf.readthedocs.io/en/latest/
 
 
-Deploy and Publish , Arcadia 
+Deploy and Publish Arcadia application
+--------------------------------------
 
 1. SSH (or WebSSH and cd /home/ubuntu/) to CICD Server
 cd /home/ubuntu/ && kubectl apply -f /home/ubuntu/Arcadia_k8S/all_apps.yaml && kubectl apply -f /home/ubuntu/k8s_ingress/full_ingress_arcadia.yaml
 
-Attack 
+Simulate Attack 
+---------------
+
 1. ?a=<script>
-2. 
+2. {\"$ne\":\"michael@gmail.com\"} 
+
+
 
 
 
