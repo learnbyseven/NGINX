@@ -1,36 +1,36 @@
 APIM DEMO Controller - 3.10 
 UDF LAB (Demo Buildout - NGINX Controller 3.10 with BIG-IP - ADC and API security)
 
-FLOW 
+DEMO-FLOW
+---------
+---------
 
 PRE : LAB UP / JBOX access tested / Devops tools login/ POSTMAN 
 
-- ARCH EXPLANATION (4 Microservices- Web/APIs) 
-- Controller quick walk through (4 modules , RBAC, Integration etc) 
+- ARCH EXPLANATION (4 Microservices- Web/APIs)
+
+- Controller quick walk through (4 modules , RBAC, Integration etc)
+
 - DEPLOY AND PUBLISH WEB APP (ADC) 
+
       - Devops deploy; Provisoning INFRA and apps on Kubernetes (GLAB > JENKINS > Kubernetes & docker)
       - Controller Publishing apps ; 
-      Usecases 
+      
+      Usecases Covered (Controller ADC 3.10)
       1. APP1 Automate infra deployment ; manual publishing on controller
       2. APP2 Automate infra deployment; Postman/API call for publishing on controller
       3. APP3 Complete end to end automated deployment (Infra+publishing) 
       
+      - DEPLOY, DEFINE, PUBLISH and TEST APIs (Controller APIM 3.10)
       
-    
+      4. API creation
+      5. API DEF (OAPI) 
+      6. API PUB
+      7. DEVPORTAL
+      8. API security(JWT)
+      9. DashBoard - Overview (analytics)
       
-- DEPLOY, DEFINE, PUBLISH and TEST APIs (App -> APIDEF(OAPI) -> APIPUB ->DEVPORTAL ->SECURITY(JWT) ->Overview(analytics) 
-
-
-
-
-
-
-
-NAP 
-UDF LAB : NGINX App Protect v2.1 in front of k8s (Modern App)
-
-
-
+ 
 
 
 
