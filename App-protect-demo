@@ -14,8 +14,12 @@ cd /home/ubuntu/ && kubectl apply -f /home/ubuntu/Arcadia_k8S/all_apps.yaml && k
 Simulate Attack on Arcadia K8s
 ------------------------------
 
-1. ?a=<script>
-2. {\"$ne\":\"michael@gmail.com\"} 
+1. ?a=<script> (cross site scripting)
+2. {\"$ne\":\"michael@gmail.com\"} (SQL injection)
+3. curl -H “1.2.3.4” http://localhost (HTTP compliance) 
+4. curl http://localhost/%09 (evasion technique detected -Apache whitespace)
+5. curl http://localhost/index.bak (disallowed file) 
+
 
 
 BUILD APP PROTECT 
