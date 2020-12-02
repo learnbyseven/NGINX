@@ -19,18 +19,18 @@ DEMO-FLOW
 -  Controller ADC usecases  (15Min)
 
       1. Automate applications and Infra Provisoning 
-      2. Microservice1&2 Automate infra deployment ; Manual publishing via controller
-      3. APP2 Automate infra deployment; Publishing via APIs/Postman 
+      2. APP1 Automated infra deployment ; Manual publishing via controller
+      3. APP2 Automated infra deployment; Publishing using APIs/Postman 
       4. APP3 Complete end to end automated deployment (Infra+publishing) 
       
  - DEPLOY, DEFINE, PUBLISH and TEST APIs (Controller APIM 3.10) (20-25Min)
       
-      5. API creation
-      6. Defining APIs (OAPI & Swagger) 
+      5. APIs creation
+      6. Defining APIs (OAPI/Swagger) 
       7. Publishing APIs
       8. Developer Portal 
       9. API security(JWT)
-      10. DashBoard - Overview (analytics)
+      10.DashBoard - Overview (analytics)
       
  
 
@@ -39,15 +39,15 @@ NAP DEMO USECASES COVERS (25-30Min)
 
 1 Deploying test lab environment (4 Microservices /Arcadia on K8s) 
 2 Simulate XSS and SQL injection Attack 
-3 Build and placement of APP protect (Threat camp) 
+3 Build and implementtion of APP protect with Appprotect , Updated signs & Threat camp 
 4 Re-simulate XSS and SQL injection Attack
 5 Security logs analysis on ELK stack
 6 Trigger Threat campaign attack (Drupal/Jakarta)
-7 Threat campaign logs analysis on ELK stack
+7 Threat campaign logs analysis on ELK
 8 SVM/CICD workflow deployment of NAP 
 9. Implementation of BOT protection policies 
 10.Trigger BOT attack 
-11.BOT attack logs analysis on ELK stack
+11.BOT attack logs analysis on ELK 
 
 
 
