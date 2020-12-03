@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 APIM DEMO Controller - 3.10 & NAP 2.0 
  
 UDF LABs 
@@ -66,55 +59,53 @@ Total Estimated Time ( 75 Min)
 
 
 
-
-
-
-
-
-
-
-
-
 Login to all tools
-
+Connect to Jumhost RDP and Login as user / user
 Controller : admin@nginx-udf.internal / admin123!
 Jenkins : admin / admin
 GitLab : root / F5twister$
 (GLAB > JENKINS > Kubernetes & docker)
 
 
-
-
-
-
-
-
-Create APP
+Create MAIN AND BACKEND APP
 ----------
+
+GITLAB>MAINAPP>DEPLOY
 
 app_webapp
 web application arcadia
 production
 Submit 
 
+
 ADD Component main
 --------------
 cp_mainapp
 main app
+Gateway : WEB
 http://www.arcadia-finance.io/
 wl_mainapp
 http://mainapp.nginx-udf.internal:30511
-Gateway: Web
+
 
 ADD Component back
 --------------
 
 cp_back
 DB backend
+Gateway: Web
 http://www.arcadia-finance.io/files/
 wl_backend
 http://backend.nginx-udf.internal:31584
-Gateway: Web
+
+
+//CHECK ARCADIA WEB SITE
+
+
+DEPLOY APP2
+-----------
+
+
 
 
 
@@ -157,11 +148,12 @@ http://mainapp.nginx-udf.internal:30511
 
 DEVPORTAL
 ---------
-Dev Portal Arcadia
+devPortalarcadia
 Brand name : API for Arcadia Application
 
 JWT
----
+--- 
+CREATE ID SRVICES>IP
 
 jwt-bearer-sso-apm
 JWT Bearer SSO
