@@ -151,17 +151,23 @@ wl_mainapp_api
 http://mainapp.nginx-udf.internal:30511
 
 
-DEVPORTAL
----------
-devPortalarcadia
-Brand name : API for Arcadia Application
+TEST-API
+--------
+- open arcadia app on web browser
+- POSTMAN - 
 
-JWT
---- 
+
+API SECURITY
+------------
+IDP creation 
+
 CREATE ID SRVICES>IP
 
 jwt-bearer-sso-apm
 JWT Bearer SSO
+
+JWT
+--- 
 
 {
 "keys": [
@@ -172,3 +178,13 @@ JWT Bearer SSO
       }
    ]
 }
+
+
+
+DEVPORTAL
+---------
+devportalarch
+env - prod
+gateway - devportal 
+Published api - production 
+Brand name : API for Arcadia Application
