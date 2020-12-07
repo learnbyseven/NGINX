@@ -104,9 +104,14 @@ http://backend.nginx-udf.internal:31584
 
 DEPLOY APP2
 -----------
+GITLAB>APP2>DEPLOY (infra deployed)
+POSTMAN - Deploy componenta app2
 
 
+DEPLOY app3 (full infra + components) 
+GITLAB>APP3>DEPLOY
 
+---END-----ADC USECASE 
 
 
 API - APP
