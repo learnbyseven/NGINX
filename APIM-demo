@@ -185,6 +185,8 @@ Credential location : Bearer
 
 DEVPORTAL
 ---------
+http://10.1.20.12/
+http://devportal.arcadia-finance.io
 devportalarch
 env - prod
 gateway - devportal 
