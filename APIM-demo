@@ -179,7 +179,9 @@ JWT
    ]
 }
 
-
+Authentication :
+Identity provided : JWT Bearer SSO 
+Credential location : Bearer
 
 DEVPORTAL
 ---------
