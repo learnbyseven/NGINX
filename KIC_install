@@ -7,9 +7,9 @@ $ make DOCKERFILE=DockerfileForPlus PREFIX=docker.io/giriraj789/nginx-plus-ingre
 docker image
 giriraj789/nginx-plus-ingress        1.9.1               46ace2053622        About a minute ago   122MB
 
-// Your task
-------------
-------------
+// Your tasks Starts from here
+------------------------------
+------------------------------
 
 // Delete Old Nginx configuration 
 
