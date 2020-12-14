@@ -1,1 +1,50 @@
+IMAGE BUILDING PROCESS
+$ mkdir /root/kicv1.9 
+$ cd /root/kicv1.9 
+$ cp nginx-repo.crt /root/kicv1.9 &&  nginx-repo.key /root/kicv1.9 
+$ make DOCKERFILE=DockerfileForPlus PREFIX=docker.io/giriraj789/nginx-plus-ingress // Build and pushed to private docker registry
+
+docker image
+giriraj789/nginx-plus-ingress        1.9.1               46ace2053622        About a minute ago   122MB
+
+// Your task
+------------
+------------
+
+// Delete Old Nginx configuration 
+
+Uninstall :
+$ kubectl delete namespace nginx-ingress
+$ kubectl delete clusterrole nginx-ingress
+$ kubectl delete clusterrolebinding nginx-ingress
+
+//Change default image with new image ASIS
+(Location based on your directory structure) 
+--------------------------------------------
+$ cd /root/kicv1.9/kubernetes-ingress 
+
+$ vi /deployments/daemon-set/nginx-plus-ingress.yaml
+//Find image parameter and change and save as follow:
+
+ - image: nginx-plus-ingress:1.9.1 
+ //Replace with ----
+ - image: docker.io/giriraj789/nginx-plus-ingress:1.9.1
+ 
+Follow: https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-manifests/
+
+$ kubectl apply -f common/ns-and-sa.yaml
+$ kubectl apply -f rbac/rbac.yaml
+$ kubectl apply -f common/default-server-secret.yaml
+$ kubectl apply -f common/nginx-config.yaml
+$ kubectl apply -f common/ingress-class.yaml
+$ kubectl apply -f common/gc-definition.yaml
+$ kubectl apply -f common/global-configuration.yaml
+$ $ kubectl apply -f daemon-set/nginx-plus-ingress.yaml
+
+Validate :
+$ kubectl get pods --namespace=nginx-ingress
+
+POST follow the cafe use case deployment ; 
+
+Once finish let me know 
 
