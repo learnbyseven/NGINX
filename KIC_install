@@ -1,22 +1,17 @@
-IMAGE BUILDING PROCESS
+EXAMPLES 
+// Official demos : https://github.com/nginxinc/kubernetes-ingress/tree/v1.9.1/examples/complete-example
+
+// IMAGE BUILDING PROCESS
 $ mkdir /root/kicv1.9 
 $ cd /root/kicv1.9 
 $ cp nginx-repo.crt /root/kicv1.9 &&  nginx-repo.key /root/kicv1.9 
 $ make DOCKERFILE=DockerfileForPlus PREFIX=docker.io/giriraj789/nginx-plus-ingress // Build and pushed to private docker registry
 
-docker image
-giriraj789/nginx-plus-ingress        1.9.1               46ace2053622        About a minute ago   122MB
+//docker image
+//giriraj789/nginx-plus-ingress:1.9.1               //46ace2053622        About a minute ago   122MB
 
-// Your tasks Starts from here
-------------------------------
-------------------------------
 
-// Delete Old Nginx configuration 
 
-Uninstall :
-$ kubectl delete namespace nginx-ingress
-$ kubectl delete clusterrole nginx-ingress
-$ kubectl delete clusterrolebinding nginx-ingress
 
 //Change default image with new image ASIS
 (Location based on your directory structure) 
@@ -39,12 +34,16 @@ $ kubectl apply -f common/nginx-config.yaml
 $ kubectl apply -f common/ingress-class.yaml
 $ kubectl apply -f common/gc-definition.yaml
 $ kubectl apply -f common/global-configuration.yaml
-$ $ kubectl apply -f daemon-set/nginx-plus-ingress.yaml
+$ kubectl apply -f daemon-set/nginx-plus-ingress.yaml
 
-Validate :
+// Validatation
 $ kubectl get pods --namespace=nginx-ingress
 
-POST follow the cafe use case deployment ; 
 
-Once finish let me know 
+// Deletion
+
+Uninstall :
+$ kubectl delete namespace nginx-ingress
+$ kubectl delete clusterrole nginx-ingress
+$ kubectl delete clusterrolebinding nginx-ingress
 
