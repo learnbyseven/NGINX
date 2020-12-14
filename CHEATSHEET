@@ -4,3 +4,6 @@ https://github.com/464d41/f5-waf-elk-dashboards
 
 Check subscription 
 . /usr/lib/nginx-plus/check-subscription
+
+Cert expire check :
+openssl x509 -enddate -noout -in nginx_cert
