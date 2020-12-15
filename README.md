@@ -4,11 +4,13 @@
 ![Image of Nginx](https://github.com/learnbyseven/NGINX/blob/master/Untitled%20Diagram.png)
 
 ## Load balancing 
-### Upstream servers 
+### Upstream servers Block 
 - Weight=5
 - backup
 - down
 - slow_start=30s
+- max_conns
+- queue 100 timeout=70
 
 ### Algorithms 
 - Round robin (default) 
