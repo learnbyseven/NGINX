@@ -10,7 +10,7 @@
 - down
 - slow_start=30s
 
-### Upstream servers
+### Algorithms 
 - Round robin (default) 
 - least_conn
 - ip_hash
