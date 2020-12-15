@@ -2,4 +2,4 @@
 nginx at one place 
 
 
-![Nginx]()
+![alt text](http://url/to/img.png)
