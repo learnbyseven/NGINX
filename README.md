@@ -16,3 +16,8 @@ ip_hash;
 hash $request_uri consistent;
 least_time header,last_byte, last_byte inflight;
 random two least_time=last_byte;
+
+## Session persistence 
+- Sticky cookie
+- Sticky route
+- Sticky learn
