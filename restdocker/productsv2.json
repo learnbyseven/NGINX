@@ -1,0 +1,22 @@
+{
+   "p1" : {
+      "name" : "boots",
+      "company" : "bata",
+      "size" : "9",
+      "instock": 10
+   },
+   
+   "p2" : {
+      "name" : "belts",
+      "company" : "lacoste",
+      "size" : "32",
+      "instock": 2
+   },
+   
+   "p3" : {
+      "name" : "sandals",
+      "company" : "liberty",
+      "size" : "6",
+      "instock": 3
+   }
+}

@@ -1,0 +1,25 @@
+Blue-Green Traffic spilting 
+---------------------------
+
+apiVersion: k8s.nginx.org/v1alpha1 
+kind: VirtualServer
+metadata:
+  name: webapp
+spec:
+host: webapp.192.168.1.80.nip.io
+upstreams:
+- name: green
+  service: green-svc
+  port: 8081
+- name: blue
+  service: blue-svc
+  port: 8081
+routes:
+- path: /
+  splits:
+  - weight: 90
+    upstream: green
+  - weight: 10
+    upstream: blue
+  
+  

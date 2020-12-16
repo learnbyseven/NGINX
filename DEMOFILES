@@ -1,0 +1,52 @@
+
+# Main Page 
+https://github.com/nginxinc/docker-nginx-controller
+
+#Steps:
+#Here's how you can build the Docker image with the Controller Agent inside, based on the official NGINX image:
+
+Step 1. git clone https://github.com/nginxinc/docker-nginx-controller.git && cd docker-nginx-controller
+
+Step 2. copy your NGINX Plus repositry certificate and key to the cloned folder.
+
+Step 3. docker build --build-arg CONTROLLER_URL=https://<fqdn>:8443/1.4 --build-arg API_KEY='abcdefxxxxxx' -t nginx-agent .
+
+Step 4. After the image is built, check the list of Docker images:
+docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+nginx-agent       latest              d039b39d2987        3 minutes ago       241.6 MB
+
+Step 5. Run Controller agent with Nginx 
+
+docker run --name mynginx1 --hostname=mynginx1 -d nginx-agent
+docker exec 7d7b47ba4c72 tail /var/log/nginx-controller/agent.log
+
+
+MYWORKING
+---------
+---------
+
+Build : 
+docker build --build-arg CONTROLLER_URL=https://cts.giri.local:8443/1.4 --build-arg API_KEY='dfb614c8b56e7098a8e4aff398f656ac' --build-arg STORE_UUID=True --add-host=cts.giri.local:192.168.1.60 -t nginx-agent .
+
+
+Bind mounts docker: 
+mkdir -p /ng1/conf
+mkdir -p /ng1/content 
+
+Execute: 
+
+docker run --name ng1 --hostname=ng1 --add-host=cts.giri.local:192.168.1.60 --mount type=bind,source=/ng1/content,target=/usr/share/nginx/html,readonly  --mount type=bind,source=/ng1/conf,target=/etc/nginx/conf -p 8080:8080 -d nginx-agent
+
+
+
+Controlling Nginx 
+-----------------
+
+$ docker kill -s HUP container-name
+To restart NGINX, run this command to restart the container:
+
+$ docker restart container-name
+
+
+nginx -t && nginx -s reload

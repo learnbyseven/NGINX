@@ -1,0 +1,35 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hs="http://192.168.1.81:8081/products">
+<soapenv:Header>
+    <ns1:RequestHeader
+      <ns1:userName>ram</ns1:userName>
+    </ns1:RequestHeader>
+  </soapenv:Header>
+ <soapenv:Body>
+     <hs:GetProducts>
+        <hs:productlist>products</hs:productslist>
+     </hs:GetProducts>
+ </soapenv:Body>
+</soapenv:Envelope>
+
+
+
+curl --location --request GET '192.168.1.81:8081/products' \
+--header 'Content-Type: application/xml' \
+--header 'Accept: application/xml' \
+--header 'User: ram' \
+--data-raw ''
+
+
+curl --location --request GET '192.168.1.81:3000/products' \
+--header 'Content-Type: application/xml' \
+--header 'Accept: application/xml' \
+--data-raw ''
+
+
+curl --location --request GET '192.168.1.81:3000/products' \
+--header 'Content-Type: application/json' \
+--header 'Accept: text/html' \
+--data-raw ''
+
+
+https://thomashunter.name/posts/2012-12-09-respond-to-json-or-xml-requests-from-a-node-js-api

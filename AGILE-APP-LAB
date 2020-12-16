@@ -1,0 +1,105 @@
+#DEMO
+
+NGINX App Protect v1.3 in front of k8s (Modern App)
+
+KIC : https://docs.nginx.com/nginx-ingress-controller/installation/building-ingress-controller-image/
+
+NAP : https://docs.nginx.com/nginx-app-protect/policy/#policy-data-guard
+
+
+Activity 1
+----------
+
+
+Step 1 - "Deploy and publish Arcadia Finance application in Kubernetes"
+webssh : CICD Server
+
+cd /home/ubuntu
+kubectl apply -f /home/ubuntu/Arcadia_k8S/all_apps.yaml
+
+Step 2 - "Publish Arcadia app with a NGINX Plus Ingress Controller"
+kubectl apply -f /home/ubuntu/k8s_ingress/full_ingress_arcadia.yaml
+
+
+
+
+Activity 2
+----------
+Protection 
+
+
+webssh : CICD Server
+cd /home/ubuntu
+
+KIC-NAP
+Step- Delete ingress 
+kubectl delete -f /home/ubuntu/k8s_ingress/full_ingress_arcadia.yaml
+
+Step - Recreate with ingress with NAP
+kubectl apply -f /home/ubuntu/k8s_ingress/full_ingress_arcadia_nap.yaml
+
+Injection:
+?a=<script>
+
+
+
+
+Activity -3 AUTOMATION 
+----------------------
+
+
+Step : Deplot NAP with CI/CD tool chain 
+
+Jenkin File
+-----------
+
+node {
+def mvnHome
+stage('Preparation') {
+    // Get some code from a GitHub repository
+    git 'http://10.1.20.4/nginx-app-protect/signature-update.git'
+
+}
+stage('Build Docker') {
+    // Build the Docker image with the date of the signature package as a docker tag
+    withEnv(["MVN_HOME=$mvnHome"]) {
+        registry = "10.1.20.7:5000/app-protect"
+        // Define the docker tag by requesting information of the yum package (signature date)
+        tag = sh (script: "yum info app-protect-attack-signatures | grep Version | cut -d':' -f2", returnStdout: true).trim()
+        echo "${tag}"
+        script {
+        docker.build registry + ":${tag}"
+        }
+    }
+}
+stage('Push Docker') {
+    withEnv(["MVN_HOME=$mvnHome"]) {
+        sh "sudo docker push 10.1.20.7:5000/app-protect:${tag}"
+        }
+}
+
+    stage name: 'Run Docker', concurrency: 1
+            withEnv(["MVN_HOME=$mvnHome"]) {
+            ansiblePlaybook inventory: 'hosts',
+            playbook: 'playbook.yaml',
+            extraVars: [dockertag: "${tag}"]
+            }
+
+}
+
+
+
+- Git commit 
+- Build -
+- Access Arcadia Docker
+- Attack<script>
+- ELK - dashboard - overview - all requests 
+
+
+
+Misc:
+
+yum info app-protect-attack-signatures 
+Jenkins : admin - admin
+Arcadia app : Matt - ilovef5
+git : root - F5twister$

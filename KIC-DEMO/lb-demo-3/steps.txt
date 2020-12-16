@@ -1,0 +1,20 @@
+#Steps 
+#lb-demo-3
+$sudo kubectl create ns lb-demo-3
+$sudo kubectl -n lb-demo-3 create deployment lb --image=giriraj789/hsdis:v1 
+$sudo kubectl -n lb-demo-3 expose deployment lb --port=80 --target-port=80
+$sudo kubectl -n lb-demo-3 scale --replicas=3 deployment lb
+$sudo kubectl -n lb-demo-3 get pods
+
+-------------
+#Ingress applying
+$kubectl -n lb-demo-3 apply -f lb-ingress.yml
+$kubectl -n lb-demo-3 describe ingress
+$for in in range {1..8}; do curl http://lb.192.168.1.80.nip.io; done
+
+#Delete Ingress
+
+$kubectl -n lb-demo-3 delete ingress --all
+$kubectl -n lb-demo-3 apply -f lb-rr-ingress.yml
+$for in in range {1..8}; do curl http://lb.192.168.1.80.nip.io; done
+

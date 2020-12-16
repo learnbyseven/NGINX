@@ -1,0 +1,15 @@
+#STEPS
+#cafe-demo-2, 
+$sudo kubectl create ns cafe-demo-2
+$sudo kubectl -n cafe-demo-2 create deployment cafe-demo-2 --image=giriraj789/cafe:v1
+$sudo kubectl -n cafe-demo-2 expose deployment cafe-demo-2 --name=tea-svc --port=8081 --target-port=80
+$sudo kubectl -n cafe-demo-2 expose deployment cafe-demo-2 --name=coffee-svc --port=8082 --target-port=80
+
+---------------
+##Apply ingress
+$sudo kubectl -n cafe-demo-2 apply -f cafe-ingress-annot.yaml
+$sudo kubectl -n cafe-demo-2 describe ingress
+##Verify
+$curl cafe.192.168.1.80.nip.io/tea
+$curl cafe.192.168.1.80.nip.io/coffee
+$curl -v -L cafe.192.168.1.80.nip.io

@@ -1,0 +1,17 @@
+#STEPS
+#cafe-demo-1
+#namespace creation
+$sudo kubectl create ns cafe-demo-1
+#Deployment creation
+$sudo kubectl -n cafe-demo-1 create deployment cafe-demo-1 --image=giriraj789/cafe:v1
+#Services creation
+$sudo kubectl -n cafe-demo-1 expose deployment cafe-demo-1 --name=tea-svc --port=8081 --target-port=80
+$sudo kubectl -n cafe-demo-1 expose deployment cafe-demo-1 --name=coffee-svc --port=8082 --target-port=80
+#TLS cert as secret
+$sudo kubectl -n cafe-demo-1 create secret tls cafe-secret --cert=example-certs/cafe-example-com.crt --key=example-certs/cafe-example-com.key 
+
+---------------
+#Create ingress 
+$sudo kubectl -n cafe-demo-1 apply -f cafe-ingress-tls.yml
+#View
+$sudo kubectl -n cafe-demo-1 get svc,secret,pods,ingress

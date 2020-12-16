@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: lb-rr-ingress
+  annotations:
+    nginx.org/lb-method: "round_robin"
+spec:
+  rules:
+  - host: lb.192.168.1.80.nip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: lb
+          servicePort: 80
