@@ -7,3 +7,6 @@ Check subscription
 
 Cert expire check :
 openssl x509 -enddate -noout -in nginx_cert
+
+TCP performance boost;
+https://www.netguru.com/codestories/nginx-tutorial-performance
