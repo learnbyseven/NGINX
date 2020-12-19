@@ -1,4 +1,132 @@
 Nginx DEMO use cases :
 
+Load balancing:
+---------------
+---------------
+example:
+upstream myServers {
+  server backend1 weight=5 max_fails=10 fail_timeout=90s;
+  server backend2 weight=3 max_fails=4 fail_timeout=60s;
+  server backend3 weight=4 max_fails=2 fail_timeout=30s;
+}
+
+- weight
+- max_fails
+- fail_timeout
+
+
+upstream backend {
+	server backend1.com max_conns=300;
+	server backend2.example.com;
+  queue 100 timeout=90;
+}
+
+upstream myServers {
+	hash $request_uri
+
+	server backend1.com;
+	server backend2.com;
+	server backend3.com;
+}
+
+
+
+OSS : RR,IP-HASH,HASH,LC 
++ : least_time and random 
+
+Example: 
+- least_time 
+
+
+Steps : 
+conf:
+upstream myServers {
+	least_time header;
+
+		server backend1.com;
+		server backend2.com;
+		server backend3.com;
+}
+- random 
+conf:
+upstream backend {
+    random two; least_time=last_byte;
+    server backend1.com;
+    server backend2.com;
+    server backend3.com;
+    server backend4.com;
+}
+
+
+DB and API setup;
+Info :
+- api directive enable
+- zone directive (upstream context)
+- status_zone (server context) 
+
+API documentation;
+Swagger UI:  https://demo.nginx.com/swagger-ui/
+Things you can do with the api:
+	get version
+	get list of endpoints
+	get list of SSL statistics / reset SSL stats
+	get status of server memory zones
+	get status of upstream server groups
+	add/delete a server to/from an upstream server group
+	get the sync status of a node
+
+conf: API directive
+-------------------
+
+server {
+    listen 8080;
+    location /api {
+        api;write=on;
+        allow 192.168.0.0/16;
+        deny all;
+    }
+}
+
+conf : Zone directive 
+---------------------
+
+upstream myServers {
+    zone backend 64k;
+    server backend1 weight=1;
+    server backend2 weight=3;
+    state /etc/nginx/conf.d/backend.state;
+}
+
+conf: Status directive:
+-----------------------
+
+server {
+    listen 8081;
+    root /server/backend1;
+    status_zone us;
+}
+server {
+    listen 8082;
+    root /server/backend2;
+    status_zone apac;
+}
+
+conf : Dash board directive 
+server { 
+    listen 8080;
+    location /api {
+        api;
+    }
+    location /dashboard.html {
+        root /usr/share/nginx/html;
+    }
+}
+
+
+
+
+
+
+
 SSL
 ---
