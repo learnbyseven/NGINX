@@ -133,10 +133,80 @@ upstream myServers {
     state /etc/nginx/conf.d/backend.state;
 }
 
+Session persistence:
+
+Sticky cookie
+-------------
+
+upstream backend {
+    server backend1.example.com;
+    server backend2.example.com;
+    sticky cookie srv_id expires=1h domain=.example.com path=/;
+}
+
+Sticky route
+------------
+upstream backend {
+   server backend1.example.com;
+   server backend2.example.com;
+   sticky learn
+       create=$upstream_cookie_examplecookie
+       lookup=$cookie_examplecookie
+       zone=client_sessions:1m
+       timeout=1h;
+}
+
+Sticky learn
+------------
+sticky learn
+       create=$upstream_cookie_examplecookie
+       lookup=$cookie_examplecookie
+       zone=client_sessions:1m
+       timeout=1h
+       sync;
+}
+
+Limiting number of connections:
+-------------------------------
+
+upstream backend {
+    server backend1.example.com max_conns=3;
+    server backend2.example.com;
+    queue 100 timeout=70;
+}
+
+Health Check
+------------
+
+server {
+    location / {
+        proxy_pass http://backend;
+        health_check;
+    }
+}
 
 
 
+http {
+    upstream backend {
+        zone backend 64k;
+        server backend1.example.com;
+        server backend2.example.com;
+        server backend3.example.com;
+        server backend4.example.com;
+    }
+}
 
+server {
+    location / {
+        proxy_pass   http://backend;
+        health_check port=8080;
+    }
+}
+location / {
+    proxy_pass http://backend;
+    health_check interval=10 fails=3 passes=2;
+}
 
 
 SSL
