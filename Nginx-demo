@@ -122,6 +122,17 @@ server {
     }
 }
 
+Curl :
+curl -X GET "http://localhost/api/5/http/upstreams/myServers/servers/" -H "accept: application/json" | jq
+
+State file for permance:
+upstream myServers {
+    zone backend 64k;
+    server backend1 weight=1;
+    server backend2 weight=3;
+    state /etc/nginx/conf.d/backend.state;
+}
+
 
 
 
