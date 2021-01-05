@@ -192,3 +192,90 @@ env - prod
 gateway - devportal 
 Published api - production 
 Brand name : API for Arcadia Application
+
+
+
+CUSTOM FLOW :
+
+
+API - APP
+---------
+
+CREATE APP 
+----------
+app_api
+API Application Arcadia
+Production Env
+
+
+API DEFINATION
+--------------
+
+arcadia-api-def
+Arcadia API Definition
+OAS3-Arcadia.yaml (located desktop) 
+
+
+PUBLISH
+-------
+
+prod-api
+Production API
+ENV: Production
+APP* API Application Arcadia 
+Gateway Gateway API
+
+
+ADD Component
+-------------
+
+cp_mainapp_api
+Component to Mainapp
+wl_mainapp_api
+http://mainapp.nginx-udf.internal:30511
+
+
+TEST-API
+--------
+- open arcadia app on web browser
+- POSTMAN - 
+
+
+API SECURITY
+------------
+IDP creation 
+
+CREATE ID SRVICES>IP
+
+jwt-bearer-sso-apm
+JWT Bearer SSO
+
+JWT
+--- 
+
+{
+"keys": [
+      {
+      "k": "aWxvdmVuZ2lueA",
+      "kid": "9876543210",
+      "kty": "oct"
+      }
+   ]
+}
+
+Authentication :
+Identity provided : JWT Bearer SSO 
+Credential location : Bearer
+
+DEVPORTAL
+---------
+http://10.1.20.12/
+http://devportal.arcadia-finance.io
+devportalarch
+env - prod
+gateway - devportal 
+Published api - production 
+Brand name : API for Arcadia Application
+
+
+
