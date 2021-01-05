@@ -6,6 +6,7 @@ $ mkdir /root/kicv1.9
 $ cd /root/kicv1.9 
 $ cp nginx-repo.crt /root/kicv1.9 &&  nginx-repo.key /root/kicv1.9 
 $ make DOCKERFILE=DockerfileForPlus PREFIX=docker.io/giriraj789/nginx-plus-ingress // Build and pushed to private docker registry
+make DOCKERFILE=DockerfileForPlus PREFIX=nginx-plus-ingress
 
 //docker image
 //docker.io/giriraj789/nginx-plus-ingress:1.9.1               //46ace2053622        About a minute ago   122MB
