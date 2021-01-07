@@ -199,6 +199,22 @@ gateway - devportal
 Published api - production 
 Brand name : API for Arcadia Application
 
+DASHBOARD:
+---------
+
+test-dashboard
+http-element 
+searcch http 
+1. htttp.request.count AGG.METHOD : RATE 
+2. nginx.http.method.get AGG.METHOD : RATE 
+
+
+
+FINISH 
+
+
+
+--------------NO -----------USE----------------
 
 
 CUSTOM FLOW :
