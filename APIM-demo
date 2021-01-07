@@ -150,6 +150,9 @@ Component to Mainapp
 wl_mainapp_api
 http://mainapp.nginx-udf.internal:30511
 
+DRAG UNROUTED TO UNDER COMPONENTS
+---------------------------------
+
 
 TEST-API
 --------
@@ -169,15 +172,18 @@ JWT Bearer SSO
 JWT
 --- 
 
-{
-"keys": [
-      {
-      "k": "aWxvdmVuZ2lueA",
-      "kid": "9876543210",
-      "kty": "oct"
-      }
-   ]
+{"keys":
+    [{
+        "k":"ZmFudGFzdGljand0",
+        "kty":"oct",
+        "kid":"0001"
+    }]
 }
+
+TOKEN
+-----
+root@ng1:~# cat quotes.jwt 
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6IjAwMDEifQ.eyJuYW1lIjoiUXVvdGF0aW9uIFN5c3RlbSIsInN1YiI6InF1b3RlcyIsImlzcyI6Ik15IEFQSSBHYXRld2F5In0.ggVOHYnVFB8GVPE-VOIo3jD71gTkLffAY0hQOGXPL2I
 
 Authentication :
 Identity provided : JWT Bearer SSO 
@@ -269,7 +275,8 @@ Credential location : Bearer
 
 DEVPORTAL
 ---------
-http://10.1.20.12/
+
+http://10.1.20.12:80
 http://devportal.arcadia-finance.io
 devportalarch
 env - prod
