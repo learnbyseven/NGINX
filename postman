@@ -1,0 +1,12 @@
+Log in controller
+
+https://cts.192.168.1.90.nip.io/platform/login
+
+RAW -- BODY 
+{
+    "credentials": {
+        "type": "BASIC",
+        "username": "giriraj@giri.local",
+        "password": "test@123"
+    }
+}
