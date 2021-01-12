@@ -1,0 +1,21 @@
+
+cp -a /etc/nginx /etc/nginx-plus-backup
+cp -a /var/log/nginx /var/log/nginx-plus-backup
+mkdir -p /etc/ssl/nginx
+cp nginx-repo.key & nginx-repo.crt /etc/ssl/nginx
+yum install ca-certificates epel-release wget -y
+wget -P /etc/yum.repos.d https://cs.nginx.com/static/files/nginx-plus-7.repo
+yum install app-protect-22+3.243.1
+nginx -v
+
+
+- name: Install a list of packages with a list variable
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - ca-certificates
+    - epel-release
+    
+ - name: Execute the command in remote shell; stdout goes to the specified file on the remote.
+  shell: app-protect.sh >> somelog.txt
