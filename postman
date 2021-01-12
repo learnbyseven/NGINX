@@ -1,6 +1,10 @@
 Log in controller
 
-https://cts.192.168.1.90.nip.io/platform/login
+https://cts.192.168.1.90.nip.io/api/v1/platform/login
+Header
+key Content-type Value application/json 
+Setting : disable SSL
+
 
 RAW -- BODY 
 {
