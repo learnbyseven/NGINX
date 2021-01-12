@@ -20,6 +20,8 @@ Simulate Attack on Arcadia K8s
 4. curl http://localhost/%09 (evasion technique detected -Apache whitespace)
 5. curl http://localhost/index.bak (disallowed file) 
 
+//for i in {1..9}; do curl "http://arcadia.192.168.1.25.nip.io?a=<script>"; done
+
 
 
 BUILD APP PROTECT 
