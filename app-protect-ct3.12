@@ -1,24 +1,31 @@
-#/bin/bash
-cp -a /etc/nginx /etc/nginx-plus-backup
-cp -a /var/log/nginx /var/log/nginx-plus-backup
-mkdir -p /etc/ssl/nginx
-cp /root/nginx-repo.* /etc/ssl/nginx
-wget -P /etc/yum.repos.d https://cs.nginx.com/static/files/nginx-plus-7.repo
-
 - hosts:
-    - all
+  - all
   tasks:
-    
-   - name: Execute the command in remote shell; stdout goes to the specified file on the remote.
-      shell: app-protect.sh 
-  
-    - name: Install a list of packages with a list variable
-      yum:
-        name: "{{ packages }}"
-          vars:
-            packages:
-               - ca-certificates
-               - epel-release
-               - app-protect-22+3.243.1
+  - name: Preparing System to install Nginx and NAP as a Gateway and L7 Firewall 
+    shell: |
+       cp -a /etc/nginx /etc/nginx-plus-backup
+       cp -a /var/log/nginx /var/log/nginx-plus-backup
+       mkdir -p /etc/ssl/nginx
+       cp /root/nginx-repo.* /etc/ssl/nginx
+
+  - name: Install packages wget-ca-certificates-epel-release
+    yum:
+      name:
+      - wget
+      - ca-certificates
+      - epel-release
+      state: present
+  - name: Repo
+    shell: wget -P /etc/yum.repos.d https://cs.nginx.com/static/files/nginx-plus-7.repo
+  - name: Installing app-protect-22+3.243.1
+    yum: 
+     name:
+       - app-protect-22+3.243.1
+     state: present
+  - name: Starting Required services Nginx|BD NAP agents 
+    ansible.builtin.systemd:
+      state: started
+      name: nginx
+
     
  
