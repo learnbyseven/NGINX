@@ -1,0 +1,7 @@
+ISM
+
+1. AP2.2 front K8
+
+- Deploy app on k8s 
+1. SSH (or WebSSH and cd /home/ubuntu/) to CICD Server
+cd /home/ubuntu/ && kubectl apply -f /home/ubuntu/Arcadia_k8S/all_apps.yaml && kubectl apply -f /home/ubuntu/k8s_ingress/full_ingress_arcadia.yaml
