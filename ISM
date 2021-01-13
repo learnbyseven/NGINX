@@ -22,6 +22,9 @@ Simulate Attack on Arcadia K8s
 ---OPTIONAL 
 1. ?a=<script> (cross site scripting)
 2. {\"$ne\":\"michael@gmail.com\"} (SQL injection)
+3. tom@gmail.com' or 2=2
+4. {\"$ne\":\"michael@gmail.com\"}
+5. <script>alert(document.cookie);</script>
 --------------------------------------------------
 
 5. SHOW BOT PROTECTION  
