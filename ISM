@@ -5,3 +5,76 @@ ISM
 - Deploy app on k8s 
 1. SSH (or WebSSH and cd /home/ubuntu/) to CICD Server
 cd /home/ubuntu/ && kubectl apply -f /home/ubuntu/Arcadia_k8S/all_apps.yaml && kubectl apply -f /home/ubuntu/k8s_ingress/full_ingress_arcadia.yaml
+
+2. NAP on centos 7 via GITLAB 
+//Jumphost>GLAB-ansible-deploy (run-pipeline) or gitlab depoy
+
+3. 
+Docker build (LAB)
+$cd /home/ubuntu
+$ docker build -t app-protect:tc -f Dockerfile-sig-tc . 
+$ docker run -dit --name app-protect -p 80:80 -v /home/ubuntu/nginx.conf:/etc/nginx/nginx.conf app-protect:tc
+
+4. Attack 
+Simulate Attack on Arcadia K8s
+------------------------------
+-- THREAT CAMPAIGN -------
+---OPTIONAL 
+1. ?a=<script> (cross site scripting)
+2. {\"$ne\":\"michael@gmail.com\"} (SQL injection)
+--------------------------------------------------
+
+5. SHOW BOT PROTECTION  
+
+// $ vi /etc/nginx/policy_bots.json
+
+
+{
+    "policy": {
+        "name": "bot_defense_policy",
+        "template": {
+            "name": "POLICY_TEMPLATE_NGINX_BASE"
+        },
+        "applicationLanguage": "utf-8",
+        "enforcementMode": "blocking",
+        "bot-defense": {
+            "settings": {
+                "isEnabled": true
+            },
+            "mitigations": {
+                "classes": [
+                    {
+                        "name": "trusted-bot",
+                        "action": "alarm"
+                    },
+                    {
+                        "name": "untrusted-bot",
+                        "action": "block"
+                    },
+                    {
+                        "name": "malicious-bot",
+                        "action": "block"
+                    }
+                ]
+            }
+        }
+    }
+}
+
+// $ app_protect_policy_file "/etc/nginx/policy_bots.json";
+
+
+// $ nginx -s reload 
+
+// Launch Jmeter desktop - jumphost - open recent or HTTP Request Bots.jmx (Located in folder Desktop > lab-links > jmeter_files)
+// ELK , open overview dashboard 
+
+
+
+
+LAB2 
+----
+
+APPsecv3.12 with NAP2.1 
+-----------------------
+
