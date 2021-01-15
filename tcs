@@ -1,4 +1,15 @@
 
+SVC-Create-APP
+Name : arcadia
+Display:arcadia
+ENV : production 
+
+Components:
+Name: main_cp
+URI : http://myapp.southindia.cloudapp.azure.com/
+
+WL: main_wl
+BackendURI: http://k8s.southindia.cloudapp.azure.com
 
 
 
@@ -9,3 +20,13 @@ Add - "Host" - k8s.southindia.cloudapp.azure.com
 Response header ;
 Add - "Host" - myapp.southindia.cloudapp.azure.com
 
+App protect :
+Simulate Attack on Arcadia K8s
+------------------------------
+
+1. ?a=<script> (cross site scripting)
+2. {\"$ne\":\"michael@gmail.com\"} (SQL injection)
+
+
+--------
+“/opt/nginx-controller/helper.sh setfeature AppSec true
