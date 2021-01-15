@@ -1,1 +1,11 @@
 
+
+
+
+Request header ;
+Add - "Host" - k8s.southindia.cloudapp.azure.com
+
+
+Response header ;
+Add - "Host" - myapp.southindia.cloudapp.azure.com
+
