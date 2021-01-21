@@ -105,5 +105,20 @@ Create BOT Policy
 //docker exec -it app-protect more /var/log/nginx/error.log
 ///services/strategies/balanced_default
 
+///ENABLE NAP COMPONENTS ON CONTROLLER 
+/// 1. RUN THIS SCRIPT AND WAIT FOR COUPLE OF MIN
+/opt/nginx-controller/helper.sh setfeature AppSec true
+
+///2. Configure controller agent to send NAP events data to controller 
+Under extention add "security = True" example below 
+vi /etc/controller-agent/agent.conf
+[extensions]
+configurator = True
+metrics = True
+Beta = False
+security = True
+
+
+
 
 
