@@ -3,6 +3,19 @@
 
 ![Image of Nginx](https://github.com/learnbyseven/NGINX/blob/master/Untitled%20Diagram.png)
 
+## PROCESS ARCH - MASTER/WORKER processes 
+## GRACEFULLY LOAD WORKER PROCESS 
+## ASYNC Architecture is non blocking mode 
+
+## Reverse proxy 
+### Protocol support
+- HTTP1/2 , Server push (style sheet, CSS , IMAGES reduce RTT-round trip time eventually boost performance) 
+- TCP/UDP (TCP-> SMTP , LDAP || UDP-> DNS , SYSLOG , RADIUS) 
+- gRPC
+- FASTCGI
+- MEMCACHED
+- SCGI/UWCGI
+
 ## Load balancing 
 ### Upstream servers Block 
 - Weight=5
@@ -16,7 +29,7 @@
 - Round robin (default) 
 - least_conn
 - ip_hash
-- hash $request_uri consistent
+- Generic hash $request_uri consistent
 - least_time 
   - header
   - last_byte
@@ -26,4 +39,8 @@
 ## Session persistence 
 - Sticky cookie
 - Sticky route
-- Sticky learn
+- Sticky learn (most sophisticated server side cookie, not at client side) 
+
+# SECURITY 
+## TLS termination 
+
