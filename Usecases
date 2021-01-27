@@ -8,3 +8,11 @@ upstream examples
 
 1. Example server backend1.example.com weight=5; 
 2. Example server 192.0.0.1 backup;
+
+
+HDFC :
+
+OS KIC 
+Zero trust (ip whitlisting)
+Oauth 
+NSM 
