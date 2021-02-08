@@ -16,9 +16,10 @@ Simulate Attack on Arcadia K8s
 
 1. ?a=<script> (cross site scripting)
 2. {\"$ne\":\"michael@gmail.com\"} (SQL injection)
-3. curl -H “1.2.3.4” http://localhost (HTTP compliance) 
-4. curl http://localhost/%09 (evasion technique detected -Apache whitespace)
-5. curl http://localhost/index.bak (disallowed file) 
+
+//optional 3. curl -H “1.2.3.4” http://localhost (HTTP compliance) 
+//optional 4. curl http://localhost/%09 (evasion technique detected -Apache whitespace)
+//optional 5. curl http://localhost/index.bak (disallowed file) 
 
 //for i in {1..9}; do curl "http://arcadia.192.168.1.25.nip.io?a=<script>"; done
 
@@ -104,6 +105,12 @@ Create BOT Policy
 // ELK , open overview dashboard 
 //docker exec -it app-protect more /var/log/nginx/error.log
 ///services/strategies/balanced_default
+
+
+
+OPTIONAL 
+--------
+--------
 
 ///ENABLE NAP COMPONENTS ON CONTROLLER 
 /// 1. RUN THIS SCRIPT AND WAIT FOR COUPLE OF MIN
