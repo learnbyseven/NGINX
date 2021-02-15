@@ -1,0 +1,73 @@
+NSM;
+* for i in $(ls); do docker load < $i; done
+
+NSM : 
+Intent based networking for microservices 
+service network 
+developer driven network 
+isolating infra concern for developers 
+empowers operator - declarativeluy define network behavior , node identity , traffic flow through policy 
+network enables service owner to control app. logic without engaging developers
+
+
+ARCH 
+
+Out-of-band 
+Management plane > governance, app logic integration
+Control plane > network topology, monitoring , state policies 
+In-band
+Data plane > packerforwarding and routing 
+
+PDU- DATA - 
+7 - Application (HL API /resource sharing /file access)
+6 - presentation - translation network services/application , encry/decrrp, data compression/encoding
+5 - session - managing session - taking care continous exchange of information between 2 nodes
+
+4 - Transport - segment/datagram reliable transmission of data segments btw 2 points on network , segmentation /ack/multiplexing 
+3 - Network - Packet - routing traffic control 
+2- datalink - Frame - reliable transmission of data frames 
+1 Physical bit/symbol Transmission/reception of raw bits streams 
+
+Dataplabe - Proxy layer 
+- intercept packet of every req.
+- health check
+- routing 
+- LB
+- authentication
+- auth
+- generate observable signals
+- App not aware of Data plane as its transparent mode insertion
+- Ingress/Egress traffic 
+- Service proxy 
+
+Control plane 
+- Single plane of glass
+- policies and configurations services in mesh 
+- Out of band 
+- do not touch any network packet
+- CLI/User interfaces to interact with mesh 
+- Ci/cd control plane API integration 
+
+Value of SM
+- visibility 
+- resiliency
+- Traffic management/control - Canary releases/ traffic based routing , latency aware LB, circuit breaking, timeouts , retries - enforcer for SLO, retry budget , rate limiting to avoid services to be oversubscribed 
+- Sec control 
+- No code change , offload app/infra layer related tasks 
+- Observability 
+- Service level telemetry
+- Logs baseline for visibility - response time 
+- Metrics -> insight , useful for decision making alike scaling etc ex. Global req. volume / Global success rate , service response by version
+- Tracing -> debug , identifying problems / slow services / failure rates / - Servcices forward context header for tracking 
+
+
+
+
+* Rate limiting protect overuse identifying by token / operational resiliency
+* Quota management - Business requirements 
+* conditional RL by Service mesh 
+
+
+
+
+
