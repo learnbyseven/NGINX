@@ -46,7 +46,9 @@ Control plane
 - Out of band 
 - do not touch any network packet
 - CLI/User interfaces to interact with mesh 
-- Ci/cd control plane API integration 
+- APIs for integration (CI/CD) and modifying mesh behavior  
+- Point of aggregation of telemertry data 
+
 
 Value of SM
 - visibility 
@@ -65,7 +67,15 @@ Value of SM
 
 * Rate limiting protect overuse identifying by token / operational resiliency
 * Quota management - Business requirements 
-* conditional RL by Service mesh 
+* conditional RL by Service mesh
+* SM networking model that sits at a layer of abstraction above TCP/IP at layer 5 
+* Decoupling Dev and Ops 
+* Capable of deep packet inspection and mutation at the app. level 
+* product owner apply business login without developers
+* Session layer as first class citizen 
+* displacing client libs for infra dependencies 
+
+
 
 
 
