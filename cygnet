@@ -1,0 +1,15 @@
+FW - Active-Active 
+Virtual IP 1
+Virtual IP 2 
+
+
+FW doesn't know where to pass on traffic 
+
+
+Req fails - error header 
+
+//- Nginx x-module header information - robust package 
+//3 Best practices - I arrange official documentation 
+// DR - Azure + NP 
+// DC - Nginx Sync Steps  
+// 
