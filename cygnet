@@ -13,3 +13,10 @@ Req fails - error header
 // DR - Azure + NP 
 // DC - Nginx Sync Steps  
 // 
+
+
+Best practices :
+https://www.nginx.com/blog/pci-dss-best-practices-with-nginx-plus/
+Secuirty controlls:
+https://docs.nginx.com/nginx/admin-guide/security-controls/
+https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
