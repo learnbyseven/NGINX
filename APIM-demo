@@ -56,11 +56,14 @@ Total Estimated Time ( 75 Min)
 
 
 
-
+APIM DEMO STARTS 
+----------------
+----------------
 
 
 Login to all tools
-Connect to Jumhost RDP and Login as user / user
+Connect to Jumhost RDP 
+Login as user / user
 Controller : admin@nginx-udf.internal / admin123!
 Jenkins : admin / admin
 GitLab : root / F5twister$
@@ -68,9 +71,16 @@ GitLab : root / F5twister$
 
 
 Create MAIN AND BACKEND APP
-----------
+---------------------------
 
 GITLAB>MAINAPP>DEPLOY
+
+ON CONTROLLER
+-------------
+
+App creation
+------------
+------------
 
 app_webapp
 web application arcadia
@@ -79,7 +89,7 @@ Submit
 
 
 ADD Component main
---------------
+------------------
 cp_mainapp
 main app
 Gateway : WEB
@@ -89,7 +99,7 @@ http://mainapp.nginx-udf.internal:30511
 
 
 ADD Component back
---------------
+------------------
 
 cp_back
 DB backend
