@@ -1,8 +1,8 @@
 Nginx DEMO use cases :
 
-Load balancing:
----------------
----------------
+Case 1 - Load balancing:
+------------------------
+-------------------------
 example:
 upstream myServers {
   server backend1 weight=5 max_fails=10 fail_timeout=90s;
@@ -58,7 +58,10 @@ upstream backend {
 }
 
 
-DB and API setup;
+Case 2 DB and API setup;
+------------------------
+------------------------
+
 Info :
 - api directive enable
 - zone directive (upstream context)
@@ -133,7 +136,9 @@ upstream myServers {
     state /etc/nginx/conf.d/backend.state;
 }
 
-Session persistence:
+Case3 Session persistence:
+--------------------------
+--------------------------
 
 Sticky cookie
 -------------
@@ -166,8 +171,9 @@ sticky learn
        sync;
 }
 
-Limiting number of connections:
--------------------------------
+case 4 Limiting number of connections:
+--------------------------------------
+--------------------------------------
 
 upstream backend {
     server backend1.example.com max_conns=3;
