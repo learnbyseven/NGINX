@@ -217,3 +217,21 @@ location / {
 
 SSL
 ---
+
+
+
+
+
+Controller demo :
+
+Alert 
+-----
+displayname : productionapi 
+metrics : http_request_count 
+filter : app='productionapi'
+breakout: app
+
+Add/delete email for notification 
+
+
+
