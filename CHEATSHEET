@@ -10,3 +10,6 @@ openssl x509 -enddate -noout -in nginx_cert
 
 TCP performance boost;
 https://www.netguru.com/codestories/nginx-tutorial-performance
+
+CDN 
+We got down to about 450 milliseconds for average serve time for our largest HLS chunks. Each is a 6‑second [long], 3.4 MB chunk.
