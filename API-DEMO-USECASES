@@ -1,11 +1,12 @@
+1. Rate limiting 
+2. IP whitelisting and blacklisting features 
+3. Host and path base routing with support for custom response.  
+4. Custom header base authentication 
+5. x-forwarded IP
 
-1. Rate limiting
-2. Custom header base authentication
-3. IP whitelisting and blacklisting features, 
-4. x-forwarded IP
-5. host and path base routing with support for custom response.
+
 
 * support for custom plugins which is written in lua language
 * invoking lambda functions
-along with these features we need    
+  
 
