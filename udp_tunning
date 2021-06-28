@@ -2,6 +2,9 @@ On Linux systems, use the netstat -su command and look for the packet receive er
 
 
 
+Nginx.conf 
+proxy_buffer_size 4096k;
+
 
 
 
@@ -14,5 +17,21 @@ net.core.rmem_max=12582912
 net.core.wmem_max=12582912
 net.core.rmem_default=12582912
 net.core.wmem_default=12582912
+proxy_buffer_size
 
 
+
+
+There are various tools available to isolate a problem area. Locate the bottleneck by investigating the following points:
+• The adapter firmware level
+- Observe drops in ethtool -S ethX statistics
+• The adapter driver level
+• The Linux kernel, IRQs or SoftIRQs
+- Check
+/proc/interrupts
+and
+/proc/net/softnet_stat
+• The protocol layers IP, TCP, or UDP
+- Use
+netstat-s
+andlookforerrorcounters.
