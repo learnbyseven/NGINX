@@ -1,0 +1,1 @@
+curl -H "user: testgroup" blue-green.192.168.1.80.nip.io

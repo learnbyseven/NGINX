@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: cafe-ingress
+  annotations:
+    nginx.org/lb-method: "round_robin" 
+    nginx.com/health-checks: "true"
+    nginx.org/server-snippets: |
+      location / {
+        add_header Content-Type text/plain;
+        return 200 'CUSTOM RESPONSE FROM NGINX INGRESS CONTROLLER, Hello User' ;
+        #return 302 /coffee;
+      }
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: cafe.192.168.1.80.nip.io
+    http:
+      paths:
+      - path: /tea
+        backend:
+          serviceName: tea-svc
+          servicePort: 8081
+      - path: /coffee
+        backend:
+          serviceName: coffee-svc
+          servicePort: 8082

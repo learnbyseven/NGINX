@@ -1,0 +1,24 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: cafe
+spec:
+  host: cafe.192.168.1.80.nip.io
+  policies:
+  - name: dryrun-rate-limit-policy
+          #- name: rate-limit-policy
+          # - name: ip-allow-denyall-policy
+  upstreams:
+  - name: tea
+    service: tea-svc
+    port: 8081
+  - name: coffee
+    service: coffee-svc
+    port: 8082
+  routes:
+  - path: /tea
+    action:
+      pass: tea
+  - path: /coffee
+    action:
+      pass: coffee

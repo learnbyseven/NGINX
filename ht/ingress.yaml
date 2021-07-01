@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ht-ingress-with-snippets
+spec:
+  rules:
+  - host: ht.192.168.1.80.nip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: ht
+          servicePort: 8090

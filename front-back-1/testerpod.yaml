@@ -1,0 +1,11 @@
+--- 
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: tester
+spec: 
+  containers: 
+    - image: docker.io/giriraj789/tester:v1
+      name: tester
+      command: ["/bin/bash"]
+      args: ["-c", "while true; do echo hello; sleep 10;done"]

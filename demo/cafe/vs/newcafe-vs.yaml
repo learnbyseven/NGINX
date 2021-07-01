@@ -1,0 +1,55 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: newcafe
+  namespace: cafe
+spec:
+  http-snippets: |
+    limit_req_zone $binary_remote_addr zone=mylimit:10m rate=1r/s;
+    proxy_cache_path /tmp keys_zone=one:10m;
+  host: newcafe.192.168.1.80.nip.io
+  #tls:
+  # secret: cafe-secret
+  server-snippets: |
+    limit_req zone=mylimit; #burst=20;
+  upstreams:
+  - name: tea
+    service: tea-svc
+    port: 8081
+  - name: coffee
+    service: coffee-svc
+    port: 8082
+  - name: fake
+    service: fake-svc
+    port: 8083
+  routes:
+  - path: /tea
+    location-snippets: |
+      proxy_cache one;
+      proxy_cache_valid 200 10m;
+      deny 192.168.1.2;
+      allow 192.168.1.80;
+      deny all;
+    action:
+      pass: tea
+  - path: /coffee
+    matches: 
+    - conditions: 
+      - header: user
+        value: giriraj
+      action:
+        pass: tea
+    action:
+      pass: fake
+  - path: /nginx
+    action:
+      redirect:
+        code: 301
+        url: https://www.nginx.com
+  - path: /
+    action:
+      return:
+        code: 200
+        type: text/plain 
+        body: "CUSTOM RESPONSE, PLEASE CHECK SWAGGER DOC FOR MORE INFORMATION"
+     

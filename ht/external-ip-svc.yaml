@@ -1,0 +1,27 @@
+---
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "ht"
+spec:
+  ports:
+    -
+      name: "ht"
+      protocol: "TCP"
+      port: 8091
+      targetPort: 8091
+      nodePort: 0
+---
+kind: "Endpoints"
+apiVersion: "v1"
+metadata:
+  name: "ht"
+subsets:
+  -
+    addresses:
+      -
+        ip: "192.168.1.69"
+    ports:
+      -
+        port: 8091
+        name: "ht"

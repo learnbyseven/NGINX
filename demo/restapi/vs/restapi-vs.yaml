@@ -1,0 +1,20 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: restapi
+spec:
+  host: restapi.192.168.1.80.nip.io
+  upstreams:
+  - name: users
+    service: user-svc
+    port: 8081
+  - name: products
+    service: product-svc
+    port: 8082
+  routes:
+  - path: /api/v1/users
+    action:
+      pass: users
+  - path: /api/v1/products
+    action:
+       pass: products

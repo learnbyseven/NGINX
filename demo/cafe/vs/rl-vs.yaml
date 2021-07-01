@@ -1,0 +1,32 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: cafe
+  namespace: cafe
+spec:
+  http-snippets: |
+    limit_req_zone $binary_remote_addr zone=mylimit:10m rate=1r/s;
+    proxy_cache_path /tmp keys_zone=one:10m;
+  host: cafe.192.168.1.80.nip.io
+  #tls:
+  # secret: cafe-secret
+  server-snippets: |
+    limit_req zone=mylimit; #burst=20;
+  upstreams:
+  - name: tea
+    service: tea-svc
+    port: 8081
+  - name: coffee
+    service: coffee-svc
+    port: 8082
+  routes:
+  - path: /tea
+    location-snippets: |
+      proxy_cache one;
+      proxy_cache_valid 200 10m;
+    action:
+      pass: tea
+  - path: /coffee
+    action:
+      pass: coffee
+     

@@ -1,0 +1,9 @@
+apiVersion: k8s.nginx.org/v1alpha1
+kind: Policy 
+metadata:
+  name: ip-allow-denyall-policy
+  namespace: hdis
+spec:
+  accessControl:
+    allow:
+    - 192.168.1.80

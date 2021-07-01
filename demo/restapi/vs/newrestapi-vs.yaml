@@ -1,0 +1,54 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: newrestapi
+spec:
+  host: newrestapi.192.168.1.80.nip.io
+  upstreams:
+  - name: users
+    service: user-svc
+    port: 8081
+  - name: products
+    service: product-svc
+    port: 8082
+  - name: fake
+    service: fake-svc
+    port: 8083
+  routes:
+  - path: /api/v1/users
+    matches: 
+    - conditions: #Cookie , arguments, Nginx variable, Headers 
+      - header: user
+        value: fake 
+      action:
+        pass: fake
+    action:
+      pass: users
+  - path: /api/v1/products
+    location-snippets: |
+       add_header 'Access-Control-Allow-Origin' '*';
+       add_header 'clientIP' $remote_addr; 
+    action:
+      proxy:
+        upstream: products
+        requestHeaders:
+          pass: true 
+          set:
+          - name: My-Header
+            value: helloGiriraj
+          pass:
+          - Server
+        rewritePath: /api/v1/products
+    action:
+      pass: products
+  - path: /
+    errorPages:
+    - codes: [502]
+      return:
+        code: 200
+        body: "Original resource not found, its a custom response"
+        headers:
+        - name: x-debug-original-statuses
+          value: ${upstream_status}
+    action:
+       pass: fake

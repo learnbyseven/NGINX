@@ -1,0 +1,17 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: ht
+  namespace: ht
+spec:
+  http-snippets: |
+    underscores_in_headers on;
+  host: ht.192.168.1.80.nip.io
+  upstreams:
+  - name: ht
+    service: ht
+    port: 8091
+  routes:
+  - path: /
+    action:
+      pass: ht
