@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-09-19T02:05:01.932Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36" etag="jYZv6xDkVJyatce7swuc" version="15.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-09-19T02:12:39.652Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36" etag="4PWaRXssYBzNweBIBte9" version="15.2.9" type="github">
   <diagram id="sHIu5tLSzTK8_ZZ-E2p6" name="Page-1">
     <mxGraphModel dx="1186" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -25,16 +25,16 @@
         <mxCell id="qqpVFh_x8hQEhywKg9o3-11" value="Pod-server" style="rounded=1;whiteSpace=wrap;html=1;arcSize=27;" vertex="1" parent="1">
           <mxGeometry x="590" y="690" width="100" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="qqpVFh_x8hQEhywKg9o3-12" value="Cluster-&quot;A&quot;&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="qqpVFh_x8hQEhywKg9o3-12" value="Cluster-&quot;A&quot;&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=#67AB9F;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="410" y="340" width="80" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="qqpVFh_x8hQEhywKg9o3-13" value="Ingress" style="triangle;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+        <mxCell id="qqpVFh_x8hQEhywKg9o3-13" value="Ingress" style="triangle;whiteSpace=wrap;html=1;direction=south;fillColor=#66FFFF;" vertex="1" parent="1">
           <mxGeometry x="570" y="560" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="qqpVFh_x8hQEhywKg9o3-14" value="Egress" style="triangle;whiteSpace=wrap;html=1;direction=north;" vertex="1" parent="1">
+        <mxCell id="qqpVFh_x8hQEhywKg9o3-14" value="Egress" style="triangle;whiteSpace=wrap;html=1;direction=north;fillColor=#B3FF66;" vertex="1" parent="1">
           <mxGeometry x="220" y="550" width="110" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="qqpVFh_x8hQEhywKg9o3-20" value="Kube-proxy" style="shape=doubleArrow;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="qqpVFh_x8hQEhywKg9o3-20" value="Kube-proxy" style="shape=doubleArrow;whiteSpace=wrap;html=1;fillColor=#66B2FF;" vertex="1" parent="1">
           <mxGeometry x="414" y="710" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="qqpVFh_x8hQEhywKg9o3-22" value="" style="endArrow=classic;html=1;" edge="1" parent="1" target="qqpVFh_x8hQEhywKg9o3-27">
