@@ -18,7 +18,6 @@ spec:
         image: docker.io/giriraj789/blue:v1
         ports:
         - containerPort: 8080
-          name: http-blue
 ---
 apiVersion: v1
 kind: Service
@@ -31,4 +30,4 @@ spec:
     - name: http-blue
       protocol: TCP
       port: 8081
-      targetPort: http-blue
+      targetPort: 8080
