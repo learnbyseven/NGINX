@@ -18,7 +18,6 @@ spec:
         image: docker.io/giriraj789/green:v1
         ports:
         - containerPort: 8080
-          name: http-green
 ---
 apiVersion: v1
 kind: Service
