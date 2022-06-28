@@ -29,5 +29,5 @@ spec:
   ports:
     - name: http-blue
       protocol: TCP
-      port: 8081
+      port: 8181
       targetPort: 8080
