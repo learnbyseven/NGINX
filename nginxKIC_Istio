@@ -1,0 +1,10 @@
+Anno
+
+nginx.ingress.kubernetes.io/service-upstream: "true" ---> Outbound traffic is intercepted by the istio sidecar
+nginx.ingress.kubernetes.io/upstream-vhost: <service-name>.<namespace>.svc.cluster.local ---> Traffic is sent to the right service entry
+
+
+Anno (https://istio.io/latest/docs/reference/config/annotations/) 
+
+traffic.sidecar.istio.io/excludeInboundPorts: 80,443 ---> A comma separated list of inbound ports to be excluded from redirection to Envoy.
+traffic.sidecar.istio.io/includeInboundPorts: "" ---> A comma separated list of inbound ports for which traffic is to be redirected to Envoy. The wildcard character '*' can be used to configure redirection for all ports. An empty list will disable all inbound redirection.
