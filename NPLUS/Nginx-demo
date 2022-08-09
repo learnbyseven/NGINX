@@ -1,5 +1,12 @@
 Nginx DEMO use cases :
 
+- Basics 
+  - Process/File structure
+  - Commands 
+- Traffic management 
+
+
+
 Case 1 - Load balancing:
 ------------------------
 -------------------------
