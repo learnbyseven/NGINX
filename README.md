@@ -8,9 +8,9 @@
 ## ASYNC Architecture is non blocking mode 
 
 ## CONTEXT 
-   http 
-        server
-               location
+   - http 
+   - server
+   - location
 
 
 
