@@ -3,14 +3,19 @@
 
 ![Image of Nginx](https://github.com/learnbyseven/NGINX/blob/master/Untitled%20Diagram.png)
 
-## PROCESS ARCH - MASTER/WORKER processes 
+## PROCESS ARCH - MASTER/WORKER processes (ASYNC Architecture is non blocking mode)
+
 ## GRACEFULLY LOAD WORKER PROCESS 
-## ASYNC Architecture is non blocking mode 
+
+## File Structure 
 
 ## CONTEXT 
    - http 
    - server
    - location
+## DIRECTIVE & VARIABLES
+   - http://nginx.org/en/docs/dirindex.html
+   - https://nginx.org/en/docs/varindex.html
 
 
 
