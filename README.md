@@ -7,6 +7,13 @@
 ## GRACEFULLY LOAD WORKER PROCESS 
 ## ASYNC Architecture is non blocking mode 
 
+## CONTEXT 
+   http 
+        server
+               location
+
+
+
 ## Reverse proxy 
 ### Protocol support
 - HTTP1/2 , Server push (style sheet, CSS , IMAGES reduce RTT-round trip time eventually boost performance) 
