@@ -238,3 +238,12 @@ Add/delete email for notification
 
 
 
+NEW TAB
+-------
+
+CHEETSHEET
+----------
+
+for i in {1..10}; do curl http://myapp.example.com;sleep 1;done
+curl -X GET "http://localhost:8080/api/5/http/upstreams" -H "accept: application/json" | jq
+
