@@ -46,13 +46,15 @@
 ### Active Healthcheck 
 
 ### Session persistence 
-- Sticky cookie
-- Sticky route
-- Sticky learn (most sophisticated server side cookie, not at client side) 
+    - Sticky cookie
+    - Sticky route
+    - Sticky learn (most sophisticated server side cookie, not at client side) 
 
 
 
-
+### Traffic Management 
+    - AB testing (traffic spilitting)
+    - 
 
 ## SECURITY 
 
