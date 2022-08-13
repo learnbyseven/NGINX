@@ -12,11 +12,8 @@
    - server
    - location
    
-## DIRECTIVE & VARIABLES
-   - http://nginx.org/en/docs/dirindex.html
-   - https://nginx.org/en/docs/varindex.html
 
-#LOAD-BALANCING 
+## LOAD-BALANCING 
 ### Algorithms 
 - Round robin (default) 
 - least_conn
@@ -29,7 +26,7 @@
 - random two least_time=last_byte
 
 ### Upstream servers Block 
-- Weight=5
+- Weight=5 
 - backup
 - down
 - slow_start=30s
@@ -45,15 +42,15 @@
 - SCGI/UWCGI
 
 
-
-
-
-
 ## Session persistence 
 - Sticky cookie
 - Sticky route
 - Sticky learn (most sophisticated server side cookie, not at client side) 
 
+
+
 # SECURITY 
 ## TLS termination 
-
+## DIRECTIVE & VARIABLES
+   - http://nginx.org/en/docs/dirindex.html
+   - https://nginx.org/en/docs/varindex.html
