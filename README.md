@@ -41,11 +41,16 @@
 - MEMCACHED
 - SCGI/UWCGI
 
+## Dashboard & API
+
+## Active Healthcheck 
 
 ## Session persistence 
 - Sticky cookie
 - Sticky route
 - Sticky learn (most sophisticated server side cookie, not at client side) 
+
+
 
 
 
