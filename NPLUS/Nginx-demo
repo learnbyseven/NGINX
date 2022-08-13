@@ -1,9 +1,7 @@
 Nginx DEMO use cases :
 
 
-
-
-Case 1 - Load balancing:
+- Load balancing:
 ------------------------
 -------------------------
 example:
@@ -13,20 +11,15 @@ upstream myServers {
   server backend3 weight=4 max_fails=2 fail_timeout=30s;
 }
 
-- weight
-- max_fails
-- fail_timeout
-
 
 upstream backend {
 	server backend1.com max_conns=300;
 	server backend2.example.com;
-  queue 100 timeout=90;
+        queue 100 timeout=90;
 }
 
 upstream myServers {
 	hash $request_uri
-
 	server backend1.com;
 	server backend2.com;
 	server backend3.com;
@@ -34,8 +27,7 @@ upstream myServers {
 
 
 
-OSS : RR,IP-HASH,HASH,LC 
-+ : least_time and random 
+
 
 Example: 
 - least_time 
