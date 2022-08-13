@@ -41,11 +41,11 @@
 - MEMCACHED
 - SCGI/UWCGI
 
-## Dashboard & API
+### Dashboard & API
 
-## Active Healthcheck 
+### Active Healthcheck 
 
-## Session persistence 
+### Session persistence 
 - Sticky cookie
 - Sticky route
 - Sticky learn (most sophisticated server side cookie, not at client side) 
@@ -54,8 +54,13 @@
 
 
 
-# SECURITY 
-## TLS termination 
-## DIRECTIVE & VARIABLES
+## SECURITY 
+
+### TLS termination 
+
+##
+
+## MISC
+### DIRECTIVE & VARIABLES
    - http://nginx.org/en/docs/dirindex.html
    - https://nginx.org/en/docs/varindex.html
