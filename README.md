@@ -6,6 +6,15 @@
 ## PROCESS ARCH - MASTER/WORKER processes (ASYNC Architecture in non blocking mode)
 
 ## File Structure 
+      - tree /etc/nginx/ 
+├── conf.d
+│   └── default.conf
+├── fastcgi_params
+├── mime.types
+├── modules -> /usr/lib/nginx/modules
+├── nginx.conf
+├── scgi_params
+└── uwsgi_params
 
 ## CONTEXT 
      - http 
