@@ -5,6 +5,11 @@
 
 ## PROCESS ARCH - MASTER/WORKER processes (ASYNC Architecture in non blocking mode)
 
+      - ps axo pid,ppid,user,cmd | egrep nginx | egrep process
+        3630     1 root     nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx.conf
+        3631  3630 nginx    nginx: worker process
+        3632  3630 nginx    nginx: worker process
+
 ## File Structure 
       - tree /etc/nginx/ 
       ├── conf.d
