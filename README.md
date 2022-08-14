@@ -21,6 +21,12 @@
      - server
      - location
 ## BASIC COMMANDS 
+      nginx -h Shows all command line options
+      nginx -t Configuration syntax check
+      nginx -T Displays full, concatenated configuration
+      nginx -V Shows version and build details
+      nginx –s reload Gracefully reload NGINX processes
+
    
 
 ## LOAD-BALANCING 
