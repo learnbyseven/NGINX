@@ -35,12 +35,12 @@
   - queue 100 timeout=70
 
 #### Protocol support
-- HTTP1/2 , Server push (style sheet, CSS , IMAGES reduce RTT-round trip time eventually boost performance) 
-- TCP/UDP (TCP-> SMTP , LDAP || UDP-> DNS , SYSLOG , RADIUS) 
-- gRPC
-- FASTCGI
-- MEMCACHED
-- SCGI/UWCGI
+     - HTTP1/2 , Server push (style sheet, CSS , IMAGES reduce RTT-round trip time eventually boost performance) 
+     - TCP/UDP (TCP-> SMTP , LDAP || UDP-> DNS , SYSLOG , RADIUS) 
+     - gRPC
+     - FASTCGI
+     - MEMCACHED
+     - SCGI/UWCGI
 
 ### Dashboard & API
 
