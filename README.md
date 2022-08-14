@@ -20,6 +20,7 @@
      - http 
      - server
      - location
+## BASIC COMMANDS 
    
 
 ## LOAD-BALANCING 
