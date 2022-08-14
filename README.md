@@ -8,9 +8,9 @@
 ## File Structure 
 
 ## CONTEXT 
-   - http 
-   - server
-   - location
+     - http 
+     - server
+     - location
    
 
 ## LOAD-BALANCING 
