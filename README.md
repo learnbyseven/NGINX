@@ -45,8 +45,8 @@
   - last_byte
   - last_byte inflight
 - random two least_time=last_byte
-          RR
-          IP_HASH
+          - RR
+          - IP_HASH
 
 #### Upstream 
 - servers Block 
