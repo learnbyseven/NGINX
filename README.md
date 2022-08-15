@@ -40,7 +40,7 @@
 ```ip_hash```
         
 ```
- - least_conn, 
+ - least_conn 
  - Generic hash 
  - least_time (header,last_byte,last_byte inflight)
  - random two least_time=last_byte
@@ -52,9 +52,10 @@
         - Weight
         - backup
         - down
-        - slow_start=30s
+        - slow_start
         - max_conns
-        - queue 100 timeout=70
+        - queue
+        - timeout
 
 #### Protocol support
      - HTTP1/2 , Server push (style sheet, CSS , IMAGES reduce RTT-round trip time eventually boost performance) 
