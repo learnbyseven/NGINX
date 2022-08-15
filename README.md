@@ -34,7 +34,7 @@
 
    
 
-## LOAD-BALANCING (http://nginx.org/en/docs/http/load_balancing.html)
+## LOAD-BALANCING 
 ### Algorithms 
 - Round robin (default) 
 - least_conn
@@ -45,6 +45,8 @@
   - last_byte
   - last_byte inflight
 - random two least_time=last_byte
+          RR
+          IP_HASH
 
 #### Upstream 
 - servers Block 
