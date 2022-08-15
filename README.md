@@ -32,10 +32,10 @@
       $nginx -V --> Shows version and build details
       $nginx –s --> reload Gracefully reload NGINX processes
 
-# Traffic Management    
+## Traffic Management    
 
-## LOAD-BALANCING 
-### Algorithms 
+### LOAD-BALANCING 
+#### Algorithms 
 
 ```Round robin - Default```
 ```ip_hash```
@@ -48,7 +48,7 @@
  ```
        
 
-#### Upstream 
+##### Upstream 
      - servers Block 
         - Weight
         - backup
@@ -58,7 +58,7 @@
         - queue
         - timeout
 
-#### Protocol support
+##### Protocol support
      - HTTP1/2 , Server push (style sheet, CSS , IMAGES reduce RTT-round trip time eventually boost performance) 
      - TCP/UDP (TCP-> SMTP , LDAP || UDP-> DNS , SYSLOG , RADIUS) 
      - gRPC
@@ -66,7 +66,7 @@
      - MEMCACHED
      - SCGI/UWCGI
 
-### Dashboard & API
+#### Dashboard & API
     # DASHBOARD & API ENABLEMENT
        server { 
                listen 192.168.0.99:8080;
@@ -80,9 +80,9 @@
            }
          }
 
-### Active Healthcheck 
+#### Active Healthcheck 
 
-### Session persistence 
+#### Session persistence 
 ```Sticky cookie```
 
 ```Sticky route```
@@ -101,13 +101,11 @@ KEY VAL Usecase - Denylist
           DELETE --> curl -iX DELETE -d '{"192.168.0.51":1}' http://192.168.0.99:8080/api/8/http/keyvals/denylist
 ```
 
-## SECURITY 
+### SECURITY 
 
-### TLS termination 
+#### TLS termination 
 
-##
-
-## MISC
-### DIRECTIVE & VARIABLES
+### MISC
+#### DIRECTIVE & VARIABLES
    - http://nginx.org/en/docs/dirindex.html
    - https://nginx.org/en/docs/varindex.html
