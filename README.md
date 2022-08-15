@@ -32,7 +32,7 @@
       $nginx -V --> Shows version and build details
       $nginx –s --> reload Gracefully reload NGINX processes
 
-   
+# Traffic Management    
 
 ## LOAD-BALANCING 
 ### Algorithms 
@@ -91,7 +91,7 @@
 
 
 
-### Traffic Management 
+
 ```AB testing (traffic spilitting)```
       
 ```
