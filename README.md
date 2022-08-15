@@ -34,7 +34,7 @@
 
    
 
-## LOAD-BALANCING 
+## LOAD-BALANCING (http://nginx.org/en/docs/http/load_balancing.html)
 ### Algorithms 
 - Round robin (default) 
 - least_conn
