@@ -1,4 +1,4 @@
-# NGINX
+# NGINX 101
  
 
 ![Image of Nginx](https://github.com/learnbyseven/NGINX/blob/master/Untitled%20Diagram.png)
