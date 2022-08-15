@@ -46,7 +46,7 @@
 
 #### Upstream 
      - servers Block 
-        - Weight=5 
+        - Weight
         - backup
         - down
         - slow_start=30s
@@ -85,8 +85,8 @@
 
 
 ### Traffic Management 
-    - AB testing (traffic spilitting)
-    - KEY VAL Usecase - Denylist
+      AB testing (traffic spilitting)
+      KEY VAL Usecase - Denylist
           LIST   --> curl http://192.168.0.99:8080/api/8/http/keyvals/denylist
           CREATE --> curl -iX POST -d '{"192.168.0.51":1}' http://192.168.0.99:8080/api/8/http/keyvals/denylist
           DELETE --> curl -iX DELETE -d '{"192.168.0.51":1}' http://192.168.0.99:8080/api/8/http/keyvals/denylist
