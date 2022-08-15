@@ -77,6 +77,7 @@
 ### Traffic Management 
     - AB testing (traffic spilitting)
     - KEY VAL Usecase - Denylist
+          curl -iX POST -d '{"192.168.0.51":1}' http://192.168.0.99:8080/api/8/http/keyvals/denylist
 
 ## SECURITY 
 
