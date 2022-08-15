@@ -36,7 +36,7 @@
 
 ## LOAD-BALANCING 
 ### Algorithms 
-      ''' Round robin - Default '''
+      ```Round robin - Default```
       ip_hash
       least_conn
       Generic hash 
