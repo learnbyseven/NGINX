@@ -64,6 +64,18 @@
      - SCGI/UWCGI
 
 ### Dashboard & API
+    # DASHBOARD & API ENABLEMENT
+       server { 
+               listen 192.168.0.99:8080;
+               location /api {
+               api write=on;
+               allow 192.168.0.99;
+               deny  all;
+              } 
+        location /dashboard.html {
+           root /usr/share/nginx/html;
+           }
+         }
 
 ### Active Healthcheck 
 
