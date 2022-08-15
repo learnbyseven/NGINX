@@ -36,9 +36,8 @@
 
 ## LOAD-BALANCING 
 ### Algorithms 
-- ![#c5f015](Round robin)
-      
-      **ip_hash**
+      Round robin - Default
+      ip_hash
       least_conn
       Generic hash 
       least_time (header,last_byte,last_byte inflight)
