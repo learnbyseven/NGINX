@@ -45,13 +45,13 @@
        
 
 #### Upstream 
-- servers Block 
-  - Weight=5 
-  - backup
-  - down
-  - slow_start=30s
-  - max_conns
-  - queue 100 timeout=70
+     - servers Block 
+        - Weight=5 
+        - backup
+        - down
+        - slow_start=30s
+        - max_conns
+        - queue 100 timeout=70
 
 #### Protocol support
      - HTTP1/2 , Server push (style sheet, CSS , IMAGES reduce RTT-round trip time eventually boost performance) 
