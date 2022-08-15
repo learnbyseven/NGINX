@@ -5,13 +5,13 @@
 
 ## PROCESS ARCH - MASTER/WORKER processes (ASYNC Architecture in non blocking mode)
 
-      - ps axo pid,ppid,user,cmd | egrep nginx | egrep process
+      $ ps axo pid,ppid,user,cmd | egrep nginx | egrep process
         3630     1 root     nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx.conf
         3631  3630 nginx    nginx: worker process
         3632  3630 nginx    nginx: worker process
 
 ## File Structure 
-      - tree /etc/nginx/ 
+      $ tree /etc/nginx/ 
       ├── conf.d
       │   └── default.conf
       ├── fastcgi_params
@@ -26,11 +26,11 @@
      - server
      - location
 ## BASIC COMMANDS (htTVs)
-      nginx -h Shows all command line options
-      nginx -t Configuration syntax check
-      nginx -T Displays full, concatenated configuration
-      nginx -V Shows version and build details
-      nginx –s reload Gracefully reload NGINX processes
+      $nginx -h --> Shows all command line options
+      $nginx -t --> Configuration syntax check
+      $nginx -T --> Displays full, concatenated configuration
+      $nginx -V --> Shows version and build details
+      $nginx –s --> reload Gracefully reload NGINX processes
 
    
 
