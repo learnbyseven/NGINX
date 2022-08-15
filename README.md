@@ -36,6 +36,7 @@
 
 ## LOAD-BALANCING 
 ### Algorithms 
+
 ```Round robin - Default```
 ```ip_hash```
         
