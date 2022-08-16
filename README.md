@@ -80,6 +80,17 @@
          }
 
 ### Active Vs Passive Health-Checks 
+       server {
+	              listen 80; 
+               server_name www.app.example.com;
+               status_zone backend; 
+               location / {
+                   proxy_pass http://backend;
+                   #health_check;
+                   #health_check interval=10 fails=3 passes=2;
+                   health_check port=8081 uri=/healthz;
+              }	
+            }	
 
 ### Session persistence 
         Sticky cookie
