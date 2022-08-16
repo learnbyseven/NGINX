@@ -33,10 +33,10 @@
 ### CONTEXT 
 ``` diff
 + http {
-     server  {
-          location {
-	           }
-	       }
++     server  {
++          location {
++	           }
++	       }
 +}```
 
    
