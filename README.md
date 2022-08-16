@@ -59,9 +59,9 @@
 #### Algorithms 
 
 ```css 
-Round robin - Default```
-```css
-ip_hash```
+Round robin - Default
+ip_hash
+```
         
 ```
  - least_conn (NginxPlus) 
