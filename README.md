@@ -22,9 +22,11 @@
       └── uwsgi_params
 
 ### CONTEXT 
-     - http 
-     - server
-     - location
+     - http {
+       - server {
+         - location
+	 }
+       }
 ### BASIC COMMANDS (htTVs)
       $nginx -h --> Shows all command line options
       $nginx -t --> Configuration syntax check
