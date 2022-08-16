@@ -98,8 +98,8 @@
         Sticky learn (most sophisticated server side cookie, not at client side)
 
 ### AB testing (traffic spilitting)
-        # CLIENT SIDE TRAFFIC SPILITING HTTP CONTEXT DIRECTIVES
-        split_clients $remote_addr $upstream {
+       # CLIENT SIDE TRAFFIC SPILITING HTTP CONTEXT DIRECTIVES
+       split_clients $remote_addr $upstream {
            50% alpha;
             *   beta;
         } 
