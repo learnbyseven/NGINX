@@ -58,8 +58,10 @@
 ### LOAD-BALANCING 
 #### Algorithms 
 
-```css Round robin - Default```
-```css ip_hash```
+```css 
+Round robin - Default```
+```css
+ip_hash```
         
 ```
  - least_conn (NginxPlus) 
