@@ -31,10 +31,9 @@
       $nginx -T --> Displays full, concatenated configuration
       $nginx -V --> Shows version and build details
       $nginx –s --> reload Gracefully reload NGINX processes
+   
 
-## Traffic Management    
-
-### LOAD-BALANCING 
+## LOAD-BALANCING 
 #### Algorithms 
 
 ```Round robin - Default```
@@ -66,7 +65,7 @@
      - MEMCACHED
      - SCGI/UWCGI
 
-#### Dashboard & API
+## Dashboard & API
     # DASHBOARD & API ENABLEMENT
        server { 
                listen 192.168.0.99:8080;
@@ -80,9 +79,9 @@
            }
          }
 
-#### Active Healthcheck 
+## Active Healthcheck 
 
-#### Session persistence 
+## Session persistence 
 ```Sticky cookie```
 
 ```Sticky route```
@@ -91,21 +90,17 @@
 
 
 
+## AB testing (traffic spilitting)
 
-```AB testing (traffic spilitting)```
+
       
-```
-KEY VAL Usecase - Denylist
+## Deny List using KeyVALUE
           LIST   --> curl http://192.168.0.99:8080/api/8/http/keyvals/denylist
           CREATE --> curl -iX POST -d '{"192.168.0.51":1}' http://192.168.0.99:8080/api/8/http/keyvals/denylist
           DELETE --> curl -iX DELETE -d '{"192.168.0.51":1}' http://192.168.0.99:8080/api/8/http/keyvals/denylist
-```
 
-### SECURITY 
 
-#### TLS termination 
 
-### MISC
-#### DIRECTIVE & VARIABLES
+### DIRECTIVE & VARIABLES
    - http://nginx.org/en/docs/dirindex.html
    - https://nginx.org/en/docs/varindex.html
