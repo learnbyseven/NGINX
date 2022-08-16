@@ -48,6 +48,25 @@
  - least_time (header,last_byte,last_byte inflight)
  - random two least_time=last_byte (NginxPlus) 
  ```
+    upstream backend {
+               zone backend 64k;
+               #ip_hash;
+               server 192.168.0.51:8081 weight=5 max_fails=10 fail_timeout=90s max_conns=1;
+               server 192.168.0.51:8082 weight=5 max_fails=10 fail_timeout=90s;  
+               #server 192.168.0.51:8083 backup;  
+               }
+
+     server {
+	listen 80; 
+        server_name www.app.example.com;
+        status_zone backend; 
+        location / {
+                   proxy_pass http://backend;
+                   #health_check;
+                   #health_check interval=10 fails=3 passes=2;
+                   health_check port=8081 uri=/healthz;
+                }	
+        }	
        
 
 ##### Upstream 
@@ -67,6 +86,8 @@
      - FASTCGI
      - MEMCACHED
      - SCGI/UWCGI
+     
+     
 
 ### Dashboard & API
     # DASHBOARD & API ENABLEMENT (NginxPlus) 
