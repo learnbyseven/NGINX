@@ -151,3 +151,4 @@
    - http://nginx.org/en/docs/http/ngx_http_keyval_module.html
    - http://nginx.org/en/docs/http/ngx_http_split_clients_module.html
    - http://nginx.org/en/docs/http/load_balancing.html
+   - https://www.nginx.com/blog/rate-limiting-nginx/
