@@ -101,16 +101,19 @@
         Sticky learn (most sophisticated server side cookie, not at client side)
 
 ### RATE Limiting 
-       http {
-             limit_req_zone $binary_remote_addr zone=mylimit:10m rate=10r/s;
- 
-         server {
-                 location /login/ {
-                 limit_req zone=mylimit;
-                 proxy_pass http://my_upstream;
-                 }
-         }
-       }
+    http {
+         limit_req_zone $binary_remote_addr zone=mylimit:10m rate=2r/s;
+
+       server {
+             listen 8084;
+              location /api {
+                limit_req zone=mylimit burst=5 nodelay;
+                proxy_pass http://web.example.com:8080/api;
+                limit_req_status 503;
+             }
+        }
+     }
+
 	
 
 ### AB testing (traffic spilitting)
