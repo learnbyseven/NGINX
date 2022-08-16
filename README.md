@@ -32,12 +32,12 @@
 
 ### CONTEXT 
 ```diff
-+ http {
-+     server  {
-+          location {
-+	           }
-+	       }
-+}
+ http {
+     server  {
+          location {
+	           }
+	       }
+}
 ```
 
    
