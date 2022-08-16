@@ -233,8 +233,7 @@ ip_hash
     Default:	error_log logs/error.log error;
     Context:	main, http, mail, stream, server, location
 ```
-  
-
+ 
 ### DIRECTIVE & VARIABLES
    - http://nginx.org/en/docs/dirindex.html
    - https://nginx.org/en/docs/varindex.html
