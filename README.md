@@ -4,18 +4,19 @@
  Learning List
  1.  Nginx Arch 
  2.  File Structure
- 3.  Basic commands
- 4.  Enabling Dashboard and APIs
- 5.  Load Balancing 
- 6.  Active Health checks
- 7.  Session persistence
- 8.  Rate Limiting 
- 9.  Traffic Spiliting 
- 10. SSL termination 
- 11. mTLS 
- 12. KeyValue Store 
- 13. Error Logs 
- 14. Access Logs 
+ 3.  Context 
+ 4.  Basic commands
+ 5.  Enabling Dashboard and APIs
+ 6.  Load Balancing 
+ 7.  Active Health checks
+ 8.  Session persistence
+ 9.  Rate Limiting 
+ 10. Traffic Spiliting 
+ 11. SSL termination 
+ 12. mTLS 
+ 13. KeyValue Store 
+ 14. Error Logs 
+ 15. Access Logs 
  ```
 
 ![Image of Nginx](https://github.com/learnbyseven/NGINX/blob/master/Untitled%20Diagram.png)
