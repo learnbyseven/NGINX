@@ -31,7 +31,7 @@
       
 
 ### CONTEXT 
-``` diff
+```diff
 + http {
 +     server  {
 +          location {
