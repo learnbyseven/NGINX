@@ -218,7 +218,22 @@ ip_hash
           CREATE --> curl -iX POST -d '{"192.168.0.51":1}' http://192.168.0.99:8080/api/8/http/keyvals/denylist
           DELETE --> curl -iX DELETE -d '{"192.168.0.51":1}' http://192.168.0.99:8080/api/8/http/keyvals/denylist
 
+### Error logs levels
+    ```css 
+    debug
+    info 
+    notice
+    warn 
+    error 
+    crit 
+    alert or emerg
+    ```
+    
+    Syntax:	error_log file [level];
+    Default:	error_log logs/error.log error;
+    Context:	main, http, mail, stream, server, location
 
+  
 
 ### DIRECTIVE & VARIABLES
    - http://nginx.org/en/docs/dirindex.html
