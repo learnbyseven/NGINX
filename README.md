@@ -3,14 +3,14 @@
 
 ![Image of Nginx](https://github.com/learnbyseven/NGINX/blob/master/Untitled%20Diagram.png)
 
-## PROCESS ARCH - MASTER/WORKER processes (ASYNC Architecture in non blocking mode)
+### PROCESS ARCH - MASTER/WORKER processes (ASYNC Architecture in non blocking mode)
 
       $ ps axo pid,ppid,user,cmd | egrep nginx | egrep process
         3630     1 root     nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx.conf
         3631  3630 nginx    nginx: worker process
         3632  3630 nginx    nginx: worker process
 
-## File Structure 
+### File Structure 
       $ tree /etc/nginx/ 
       ├── conf.d
       │   └── default.conf
@@ -21,11 +21,11 @@
       ├── scgi_params
       └── uwsgi_params
 
-## CONTEXT 
+### CONTEXT 
      - http 
      - server
      - location
-## BASIC COMMANDS (htTVs)
+### BASIC COMMANDS (htTVs)
       $nginx -h --> Shows all command line options
       $nginx -t --> Configuration syntax check
       $nginx -T --> Displays full, concatenated configuration
@@ -33,7 +33,7 @@
       $nginx –s --> reload Gracefully reload NGINX processes
    
 
-## LOAD-BALANCING 
+### LOAD-BALANCING 
 #### Algorithms 
 
 ```Round robin - Default```
@@ -65,7 +65,7 @@
      - MEMCACHED
      - SCGI/UWCGI
 
-## Dashboard & API
+### Dashboard & API
     # DASHBOARD & API ENABLEMENT
        server { 
                listen 192.168.0.99:8080;
@@ -79,9 +79,9 @@
            }
          }
 
-## Active Healthcheck 
+### Active Vs Passive Health-Checks 
 
-## Session persistence 
+### Session persistence 
 ```Sticky cookie```
 
 ```Sticky route```
@@ -90,11 +90,11 @@
 
 
 
-## AB testing (traffic spilitting)
+### AB testing (traffic spilitting)
 
 
       
-## Deny List using KeyVALUE
+### Deny List using KeyVALUE
           LIST   --> curl http://192.168.0.99:8080/api/8/http/keyvals/denylist
           CREATE --> curl -iX POST -d '{"192.168.0.51":1}' http://192.168.0.99:8080/api/8/http/keyvals/denylist
           DELETE --> curl -iX DELETE -d '{"192.168.0.51":1}' http://192.168.0.99:8080/api/8/http/keyvals/denylist
