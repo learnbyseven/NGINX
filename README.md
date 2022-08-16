@@ -40,10 +40,10 @@
 ```ip_hash```
         
 ```
- - least_conn 
+ - least_conn (NginxPlus) 
  - Generic hash 
  - least_time (header,last_byte,last_byte inflight)
- - random two least_time=last_byte
+ - random two least_time=last_byte (NginxPlus) 
  ```
        
 
@@ -66,7 +66,7 @@
      - SCGI/UWCGI
 
 ### Dashboard & API
-    # DASHBOARD & API ENABLEMENT
+    # DASHBOARD & API ENABLEMENT (NginxPlus) 
        server { 
                listen 192.168.0.99:8080;
                location /api {
@@ -79,7 +79,7 @@
            }
          }
 
-### Active Vs Passive Health-Checks 
+### Active (NginxPlus)  Vs Passive Health-Checks 
        server {
 	              listen 80; 
                server_name www.app.example.com;
@@ -92,7 +92,7 @@
               }	
             }	
 
-### Session persistence 
+### Session persistence (NginxPlus) 
         Sticky cookie
         Sticky route
         Sticky learn (most sophisticated server side cookie, not at client side)
@@ -119,7 +119,7 @@
 
 
       
-### Deny List using KeyVALUE
+### Deny List using KeyVALUE (NginxPlus) 
           LIST   --> curl http://192.168.0.99:8080/api/8/http/keyvals/denylist
           CREATE --> curl -iX POST -d '{"192.168.0.51":1}' http://192.168.0.99:8080/api/8/http/keyvals/denylist
           DELETE --> curl -iX DELETE -d '{"192.168.0.51":1}' http://192.168.0.99:8080/api/8/http/keyvals/denylist
@@ -129,3 +129,4 @@
 ### DIRECTIVE & VARIABLES
    - http://nginx.org/en/docs/dirindex.html
    - https://nginx.org/en/docs/varindex.html
+   - http://nginx.org/en/docs/http/ngx_http_keyval_module.html
