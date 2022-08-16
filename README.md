@@ -31,7 +31,7 @@
       
 
 ### CONTEXT 
-```html
+```js
  http {
      server  {
           location {
