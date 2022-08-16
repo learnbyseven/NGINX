@@ -137,6 +137,19 @@
 
 
 ### SSL termination (HTTPS)
+    server {
+	listen 443 ssl;
+        # Set accepted protocol and cipher
+	ssl_protocols TLSv1.2 TLSv1.3;
+        ssl_ciphers HIGH:!aNULL:!MD5;
+	ssl_certificate /mycerts/web.example.com.crt;
+	ssl_certificate_key /mycerts/web.example.com.key;
+	location / {
+                proxy_pass http://192.168.0.51:8084;
+		
+	 }
+     }
+
 
 ### Enabling mTLS 
     server {
