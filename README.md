@@ -31,12 +31,13 @@
       
 
 ### CONTEXT 
-       http {
+      ``` diff
+       + http {
            server  {
                    location {
 	           }
 	       }
-       }
+       }```
 
    
 ### Dashboard & API
