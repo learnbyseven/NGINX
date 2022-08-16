@@ -1,9 +1,26 @@
 # NGINX 101
  
+ ```css
+ Learning List
+ 1.  Nginx Arch 
+ 2.  File Structure
+ 3.  Basic commands
+ 4.  Enabling Dashboard and APIs
+ 5.  Load Balancing 
+ 6.  Active Health checks
+ 7.  Session persistence
+ 8.  Rate Limiting 
+ 9.  Traffic Spiliting 
+ 10. SSL termination 
+ 11. mTLS 
+ 12. KeyValue Store 
+ 13. Error Logs 
+ 14. Access Logs 
+ ```
 
 ![Image of Nginx](https://github.com/learnbyseven/NGINX/blob/master/Untitled%20Diagram.png)
 
-### PROCESS ARCH - MASTER/WORKER processes (ASYNC Architecture in non blocking mode)
+### Nginx ARCH - MASTER/WORKER processes (ASYNC Architecture in non blocking mode)
 
       $ ps axo pid,ppid,user,cmd | egrep nginx | egrep process
         3630     1 root     nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx.conf
