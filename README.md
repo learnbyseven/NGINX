@@ -233,7 +233,19 @@ ip_hash
     Default:	error_log logs/error.log error;
     Context:	main, http, mail, stream, server, location
 ```
- 
+### Access logs 
+```css
+   main
+   compression
+   combined
+```
+```
+   Syntax:	access_log path [format [buffer=size] [gzip[=level]] [flush=time] [if=condition]];
+   access_log off;
+   Default:	
+   access_log logs/access.log combined;
+   Context:	http, server, location, if in location, limit_except
+```
 ### DIRECTIVE & VARIABLES
    - http://nginx.org/en/docs/dirindex.html
    - https://nginx.org/en/docs/varindex.html
