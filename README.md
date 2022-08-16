@@ -136,9 +136,23 @@
         }
 
 
+### SSL termination (HTTPS)
 
+### Enabling mTLS 
+    server {
+	listen 443 ssl;
+	ssl_certificate /mycerts/web.example.com.crt;
+	ssl_certificate_key /mycerts/web.example.com.key;
+        ssl_verify_client on; # For mTLS
+        ssl_client_certificate /mycerts/ca.crt; # for mTLS
+	location / {
+               return 200 '{"SERVER_RESPONSE": "mTLS established"}';
+	       add_header Content-Type text/plain always;
+	}	
+     }
+     $curl --cert client.crt --key client.key --cacert ca.crt https://web.example.com
       
-### Deny List using KeyVALUE (NginxPlus) 
+### KeyVALUE Store for Denylist (NginxPlus) 
           LIST   --> curl http://192.168.0.99:8080/api/8/http/keyvals/denylist
           CREATE --> curl -iX POST -d '{"192.168.0.51":1}' http://192.168.0.99:8080/api/8/http/keyvals/denylist
           DELETE --> curl -iX DELETE -d '{"192.168.0.51":1}' http://192.168.0.99:8080/api/8/http/keyvals/denylist
