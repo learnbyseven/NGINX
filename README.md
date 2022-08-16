@@ -31,7 +31,7 @@
       
 
 ### CONTEXT 
-```diff
+```json
  http {
      server  {
           location {
