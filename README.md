@@ -100,6 +100,19 @@
         Sticky route
         Sticky learn (most sophisticated server side cookie, not at client side)
 
+### RATE Limiting 
+       http {
+             limit_req_zone $binary_remote_addr zone=mylimit:10m rate=10r/s;
+ 
+         server {
+                 location /login/ {
+                 limit_req zone=mylimit;
+                 proxy_pass http://my_upstream;
+                 }
+         }
+       }
+	
+
 ### AB testing (traffic spilitting)
        # CLIENT SIDE TRAFFIC SPILITING HTTP CONTEXT DIRECTIVES
        split_clients $remote_addr $upstream {
