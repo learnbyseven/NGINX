@@ -20,6 +20,15 @@
       ├── nginx.conf
       ├── scgi_params
       └── uwsgi_params
+      
+      
+### BASIC COMMANDS (htTVs)
+      $nginx -h --> Shows all command line options
+      $nginx -t --> Configuration syntax check
+      $nginx -T --> Displays full, concatenated configuration
+      $nginx -V --> Shows version and build details
+      $nginx –s --> reload Gracefully reload NGINX processes
+      
 
 ### CONTEXT 
        http {
@@ -28,13 +37,21 @@
 	           }
 	       }
        }
-### BASIC COMMANDS (htTVs)
-      $nginx -h --> Shows all command line options
-      $nginx -t --> Configuration syntax check
-      $nginx -T --> Displays full, concatenated configuration
-      $nginx -V --> Shows version and build details
-      $nginx –s --> reload Gracefully reload NGINX processes
+
    
+### Dashboard & API
+    # DASHBOARD & API ENABLEMENT (NginxPlus) 
+       server { 
+               listen 192.168.0.99:8080;
+               location /api {
+               api write=on;
+               allow 192.168.0.99;
+               deny  all;
+              } 
+        location /dashboard.html {
+           root /usr/share/nginx/html;
+           }
+         }
 
 ### LOAD-BALANCING 
 #### Algorithms 
@@ -88,19 +105,7 @@
      
      
 
-### Dashboard & API
-    # DASHBOARD & API ENABLEMENT (NginxPlus) 
-       server { 
-               listen 192.168.0.99:8080;
-               location /api {
-               api write=on;
-               allow 192.168.0.99;
-               deny  all;
-              } 
-        location /dashboard.html {
-           root /usr/share/nginx/html;
-           }
-         }
+
 
 ### Active (NginxPlus)  Vs Passive Health-Checks 
        server {
