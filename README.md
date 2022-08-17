@@ -85,7 +85,7 @@ ip_hash
 ```
  - least_conn (NginxPlus) 
  - Generic hash 
- - least_time (header,last_byte,last_byte inflight)
+ - least_time (header(Time to receive First-byte,last_byte(full response),last_byte inflight (incomplete req)
  - random two least_time=last_byte (NginxPlus) 
  ```
     upstream backend {
