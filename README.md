@@ -144,9 +144,9 @@ ip_hash
             }	
 
 ### Session persistence (NginxPlus) 
-        Sticky cookie
-        Sticky route - curl -v --cookie "route=a" http://app.example.com
-        Sticky learn (most sophisticated server side cookie, not at client side) - curl -v --cookie "sessionID=123" http://app.example.com
+        Sticky cookie - Test_WITH curl -v  http://app.example.com
+        Sticky route - Test_WITH curl -v --cookie "route=a" http://app.example.com
+        Sticky learn (most sophisticated server side cookie, not at client side) - Test_WITH curl -v  http://app.example.com
 
 ### RATE Limiting 
     http {
