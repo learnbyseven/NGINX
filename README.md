@@ -80,7 +80,7 @@
 ```css 
 Round robin - Default
 ip_hash
-least_conn (NginxPlus)
+least_time
 ```
         
 ``` 
