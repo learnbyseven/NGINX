@@ -27,15 +27,16 @@
         3630     1 root     nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx.conf
         3631  3630 nginx    nginx: worker process
         3632  3630 nginx    nginx: worker process
-
+    (Main_process PID stick with nginx -s reload which is a graceful restart , worker_process PID are keep changing with every graceful restart)
+     
 ### File Structure 
       $ tree /etc/nginx/ 
-      ├── conf.d
-      │   └── default.conf
+      ├── conf.d----> Server(virtual server)/location contexts should reside here  
+      │   └── default.conf
       ├── fastcgi_params
       ├── mime.types
       ├── modules -> /usr/lib/nginx/modules
-      ├── nginx.conf
+      ├── nginx.conf ----> Main and HTTP contexts (Main configration file) 
       ├── scgi_params
       └── uwsgi_params
       
@@ -75,6 +76,7 @@
          }
 
 ### LOAD-BALANCING 
+
 #### Algorithms 
 
 ```css 
@@ -127,7 +129,16 @@ least_time
      - SCGI/UWCGI
      
      
-
+#### TCP Load balancing (Nginx.conf is a good place for quick start)
+     stream {
+            upstream ssh_backend {
+                 server 192.168.0.51:22;
+             }
+     server {
+        listen 2222;
+        proxy_pass ssh_backend;
+        }
+     }
 
 
 ### Active (NginxPlus)  Vs Passive Health-Checks 
