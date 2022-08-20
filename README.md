@@ -10,7 +10,7 @@
  6.  Load Balancing 
  7.  Active Health checks
  8.  Session persistence
- 9.  Rate Limiting 
+ 9.  Rate Limiting - Connections,Request,Bandwidth
  10. Traffic Spiliting 
  11. SSL termination 
  12. mTLS 
