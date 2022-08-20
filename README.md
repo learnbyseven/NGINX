@@ -165,6 +165,10 @@ least_time
         Sticky learn (most sophisticated server side cookie, not at client side) - Test_WITH curl -v  http://app.example.com
 
 ### RATE Limiting 
+    - Connections - limit_conn
+    - Requests - limit_req 
+    - Bandwidth - limit_rate 
+    
     http {
          limit_req_zone $binary_remote_addr zone=mylimit:10m rate=2r/s;
 
