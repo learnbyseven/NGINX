@@ -139,7 +139,12 @@ least_time
         proxy_pass ssh_backend;
         }
      }
-
+ 
+     Best practice - Put below in Nginx.conf, Create a seprate folder for upstream/server/location contexts
+   
+     stream {
+         include /etc/nginx/stream.conf.d/*.conf;
+     }
 
 ### Active (NginxPlus)  Vs Passive Health-Checks 
        server {
