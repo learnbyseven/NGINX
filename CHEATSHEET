@@ -16,3 +16,10 @@ We got down to about 450 milliseconds for average serve time for our largest HLS
 
 
 openssl x509 -in nginx-repo.crt -text -noout | grep "Not After"
+
+SQL-CS
+------
+$show databases;
+$use <database_name>;
+$select * from <table_name>
+$delete from <table_name> where Name='' OR Name IS NULL;
