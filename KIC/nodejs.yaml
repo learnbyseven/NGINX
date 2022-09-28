@@ -26,7 +26,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: njall
+  name: njall-a
 spec:
   selector:
     app: njall
@@ -35,6 +35,15 @@ spec:
       port: 8081
       targetPort: 8081
       protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: njall-b
+spec:
+  selector:
+    app: njall
+  ports:
     - name: http-server-2
       port: 8082
       targetPort: 8082
