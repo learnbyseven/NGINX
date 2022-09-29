@@ -1,4 +1,5 @@
-Anno
+Annotations
+-----------
 
 nginx.ingress.kubernetes.io/service-upstream: "true" ---> Outbound traffic is intercepted by the istio sidecar
 nginx.ingress.kubernetes.io/upstream-vhost: <service-name>.<namespace>.svc.cluster.local ---> Traffic is sent to the right service entry
