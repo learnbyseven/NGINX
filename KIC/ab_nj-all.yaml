@@ -1,0 +1,50 @@
+# Deployment AB image name nj:all
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ab
+  labels:
+    app: ab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ab
+  template:
+    metadata:
+      labels:
+        app: ab
+    spec:
+      containers:
+      - name: ab
+        image: giriraj789/nj:all
+        ports:
+        - containerPort: 8081
+        - containerPort: 8082
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: a
+spec:
+  selector:
+    app: ab
+  ports:
+    - name: http-a
+      port: 8081
+      targetPort: 8081
+      protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: b
+spec:
+  selector:
+    app: ab
+  ports:
+    - name: http-b
+      port: 8082
+      targetPort: 8082
+      protocol: TCP
