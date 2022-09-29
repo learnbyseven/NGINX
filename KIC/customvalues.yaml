@@ -1,0 +1,18 @@
+#Helm defination file 
+controller:
+  kind: daemonset
+  nginxplus: true
+  appprotect: 
+    enable: true
+  image:
+    repository: giriraj789/ic-nap
+    tag: "2.3.0"
+  watchNamespace: "test,test1,test2"
+  enablePreviewPolicies: true
+  nginxStatus:
+    port: 8080
+    allowCidrs: "0.0.0.0,192.68.0.0"
+  enableSnippets: true
+prometheus:
+  create: true
+  port: 9113
