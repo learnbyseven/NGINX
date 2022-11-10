@@ -1,3 +1,6 @@
+curl --interface eth0 -g -6 'http://[2606:2800:220:1:248:1893:25c8:1946]:80/index.html' -H 'Host: www.example.com'
+
+
 1. ELK based NAP DASHBOARD 
 https://github.com/464d41/f5-waf-elk-dashboards
 
