@@ -1,0 +1,108 @@
+
+
+Test-Application-deployment
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dns-app
+  labels:
+    app: dns-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dns-app
+  template:
+    metadata:
+      labels:
+        app: dns-app
+    spec:
+      containers:
+      - name: dns-app
+        image: giriraj789/tester:v1
+        ports:
+        - containerPort: 5353
+          name: dns-app
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dns-app
+spec:
+  selector:
+    app: dns-app
+  ports:
+    - name: dns-app
+      port: 5353
+      targetPort: 5353
+      protocol: TCP
+      
+ ----
+ 
+ Values.yaml file
+ ----------------
+ 
+ 
+   globalConfiguration:
+    ## Creates the GlobalConfiguration custom resource. Requires controller.enableCustomResources.
+    create: true
+
+    ## The spec of the GlobalConfiguration for defining the global configuration parameters of the Ingress Controller.
+    spec: 
+     listeners:
+     - name: dns-udp
+       port: 5353
+       protocol: UDP
+     - name: dns-tcp
+       port: 5353
+       protocol: TCP
+ 
+ ------
+ Transport server in Test application namespace
+ ------
+ 
+apiVersion: k8s.nginx.org/v1alpha1
+kind: TransportServer
+metadata:
+  name: dns-tcp
+spec:
+  listener:
+    name: dns-tcp
+    protocol: TCP
+  upstreams:
+  - name: dns-app
+    service: dns-app
+    port: 5353
+  action:
+    pass: dns-app
+-------------
+
+Node port svc 
+--------------
+apiVersion: v1
+kind: Service
+metadata:
+  name: tcp-lb-svc
+spec:
+  type: NodePort
+  selector:
+    app: my-rel-nginx-ingress
+  ports:
+      # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
+    - port: 5353
+      targetPort: 5353
+      # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
+      nodePort: 30053
+
+
+
+Extra
+-----
+Login on test 
+touch index.html 
+echo "server-1-ONE" > index.html 
+while true; do netcat -l -v -k -p 5353 < index.html; done 
+netcat -v am11.192.168.0.69.nip.io 30053
+
+
