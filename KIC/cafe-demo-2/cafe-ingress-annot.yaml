@@ -8,7 +8,7 @@ metadata:
     nginx.org/client-max-body-size: "4m"
     nginx.org/server-snippets: |
       location / {
-        return 302 /coffee;
+        return 302 /coffeee;
       }
 spec:
   rules:
